@@ -1,0 +1,33 @@
+Format: 1.8
+Date: Sat, 01 Dec 2018 00:37:48 +0100
+Source: bison
+Binary: bison libbison-dev
+Built-For-Profiles: nobiarch nocheck
+Architecture: amd64
+Version: 2:3.2.2-1
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Chuan-kai Lin <cklin@debian.org>
+Changed-By: Richard Yang <richard@yenforyang.com>
+Description:
+ bison      - YACC-compatible parser generator
+ libbison-dev - YACC-compatible parser generator - development library
+Changes:
+ bison (2:3.2.2-1) UNRELEASED; urgency=medium
+ .
+   * New upstream release
+Checksums-Sha1:
+ 626fd1c1d69c63f834b6d0b8e199c893188d64a0 285076 bison-dbgsym_3.2.2-1_amd64.deb
+ 62db778a31ee28ca4325f371d7a023e1dba4ed99 5486 bison_3.2.2-1_amd64.buildinfo
+ a72bc06e013269edff14aa1f4ec4b29876afd035 895492 bison_3.2.2-1_amd64.deb
+ 4398f59c0bc640717d5601bf91ba4184b4b1f1dc 487656 libbison-dev_3.2.2-1_amd64.deb
+Checksums-Sha256:
+ 531f93920344617800b57ee2227071a0a6c90b20019f6060d01635d57dbfd77b 285076 bison-dbgsym_3.2.2-1_amd64.deb
+ 945f8fd4a3f2033438c8ae57fc0d5961a82958636a5c73af6cb381b0335f193a 5486 bison_3.2.2-1_amd64.buildinfo
+ 6870c0296e13456e2386ded41886cf0e1094c3defcfd3f8054584e800c639030 895492 bison_3.2.2-1_amd64.deb
+ eb6af6ea5fb4086b3e5662165b1db304401c764d1e7c4db6f4f11ec4ee8f7306 487656 libbison-dev_3.2.2-1_amd64.deb
+Files:
+ b34d62f4a66e3b1bbe0071ef102e5c63 285076 debug optional bison-dbgsym_3.2.2-1_amd64.deb
+ 56c23c18fd4395799468d611cc3b3dec 5486 devel optional bison_3.2.2-1_amd64.buildinfo
+ 43edbaab0a76d96303de1dba64e552eb 895492 devel optional bison_3.2.2-1_amd64.deb
+ 8963ba23d86b5f62930c8ebee4dc9d94 487656 libdevel optional libbison-dev_3.2.2-1_amd64.deb

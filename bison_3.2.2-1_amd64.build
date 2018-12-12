@@ -1,0 +1,2524 @@
+ dpkg-buildpackage -D -us -uc -ui -b -Jauto -Pnobiarch,nocheck
+dpkg-buildpackage: info: source package bison
+dpkg-buildpackage: info: source version 2:3.2.2-1
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Richard Yang <richard@yenforyang.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --parallel
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+[ ! -f /home/richard/debs/NONGIT/bison/bison-3.2.2/Makefile ] || dh_auto_clean
+	make V=1 -j8 distclean
+make[2]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+Making distclean in po
+make[3]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2/po'
+rm -f *.insert-header
+rm -f remove-potcdate.sed
+rm -f stamp-poT
+rm -f core core.* bison.po bison.1po bison.2po *.new.po
+rm -fr *.o
+rm -f Makefile Makefile.in POTFILES *.mo
+make[3]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2/po'
+Making distclean in runtime-po
+make[3]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2/runtime-po'
+rm -f *.insert-header
+rm -f remove-potcdate.sed
+rm -f stamp-poT
+rm -f core core.* bison-runtime.po bison-runtime.1po bison-runtime.2po *.new.po
+rm -fr *.o
+rm -f Makefile Makefile.in POTFILES *.mo
+make[3]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2/runtime-po'
+Making distclean in .
+make[3]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+test -z "doc/bison.dvi doc/bison.pdf doc/bison.ps doc/bison.html" \
+|| rm -rf doc/bison.dvi doc/bison.pdf doc/bison.ps doc/bison.html
+test -z "src/bison" || rm -f src/bison
+test -z "examples/calc++/calc++ examples/c++/simple examples/c++/variant examples/c++/variant-11 examples/mfcalc/mfcalc examples/rpcalc/rpcalc" || rm -f examples/calc++/calc++ examples/c++/simple examples/c++/variant examples/c++/variant-11 examples/mfcalc/mfcalc examples/rpcalc/rpcalc
+rm -f examples/c++/simple.cc
+test -z "lib/liby.a" || rm -f lib/liby.a
+test ! -f ./tests/testsuite || ./tests/testsuite -C tests --clean
+test -z "lib/libbison.a" || rm -f lib/libbison.a
+rm -rf doc/bison.t2d doc/bison.t2p
+rm -f *.o
+test -z "./doc/*.tmp lib/core lib/*.stackdump lib/alloca.h lib/alloca.h-t lib/errno.h lib/errno.h-t lib/fcntl.h lib/fcntl.h-t lib/float.h lib/float.h-t lib/getopt.h lib/getopt.h-t lib/getopt-cdefs.h lib/getopt-cdefs.h-t lib/inttypes.h lib/inttypes.h-t lib/limits.h lib/limits.h-t lib/math.h lib/math.h-t lib/sched.h lib/sched.h-t lib/signal.h lib/signal.h-t lib/spawn.h lib/spawn.h-t lib/stdbool.h lib/stdbool.h-t lib/stddef.h lib/stddef.h-t lib/stdint.h lib/stdint.h-t lib/stdio.h lib/stdio.h-t lib/stdlib.h lib/stdlib.h-t lib/string.h lib/string.h-t lib/sys/resource.h lib/sys/resource.h-t lib/sys/stat.h lib/sys/stat.h-t lib/sys/time.h lib/sys/time.h-t lib/sys/times.h lib/sys/times.h-t lib/sys/types.h lib/sys/types.h-t lib/sys/wait.h lib/sys/wait.h-t lib/time.h lib/time.h-t lib/unistd.h lib/unistd.h-t lib/unitypes.h lib/unitypes.h-t lib/uniwidth.h lib/uniwidth.h-t lib/wchar.h lib/wchar.h-t lib/wctype.h lib/wctype.h-t src/yacc" || rm -f ./doc/*.tmp lib/core lib/*.stackdump lib/alloca.h lib/alloca.h-t lib/errno.h lib/errno.h-t lib/fcntl.h lib/fcntl.h-t lib/float.h lib/float.h-t lib/getopt.h lib/getopt.h-t lib/getopt-cdefs.h lib/getopt-cdefs.h-t lib/inttypes.h lib/inttypes.h-t lib/limits.h lib/limits.h-t lib/math.h lib/math.h-t lib/sched.h lib/sched.h-t lib/signal.h lib/signal.h-t lib/spawn.h lib/spawn.h-t lib/stdbool.h lib/stdbool.h-t lib/stddef.h lib/stddef.h-t lib/stdint.h lib/stdint.h-t lib/stdio.h lib/stdio.h-t lib/stdlib.h lib/stdlib.h-t lib/string.h lib/string.h-t lib/sys/resource.h lib/sys/resource.h-t lib/sys/stat.h lib/sys/stat.h-t lib/sys/time.h lib/sys/time.h-t lib/sys/times.h lib/sys/times.h-t lib/sys/types.h lib/sys/types.h-t lib/sys/wait.h lib/sys/wait.h-t lib/time.h lib/time.h-t lib/unistd.h lib/unistd.h-t lib/unitypes.h lib/unitypes.h-t lib/uniwidth.h lib/uniwidth.h-t lib/wchar.h lib/wchar.h-t lib/wctype.h lib/wctype.h-t src/yacc
+rm -f vti.tmp* ./doc/version.texi.tmp*
+rm -f examples/c++/simple.hh
+rm -f *.tab.c
+rm -f examples/c++/*.o
+test -z "javacomp.sh javaexec.sh etc/bench.pl tests/atlocal tests/bison doc/yacc.1" || rm -f javacomp.sh javaexec.sh etc/bench.pl tests/atlocal tests/bison doc/yacc.1
+rm -f lib/config.h lib/stamp-h1
+test '.' = . || rm -f ./GNUmakefile
+rm -f examples/c++/variant-11.cc
+test -z "examples/mfcalc/mfcalc.log examples/rpcalc/rpcalc.log examples/calc++/calc++.log examples/c++/simple.log examples/c++/variant.log examples/c++/variant-11.log" || rm -f examples/mfcalc/mfcalc.log examples/rpcalc/rpcalc.log examples/calc++/calc++.log examples/c++/simple.log examples/c++/variant.log examples/c++/variant-11.log
+rm -f TAGS ID GTAGS GRTAGS GSYMS GPATH tags
+rm -f examples/calc++/*.o
+test -z "examples/mfcalc/mfcalc.trs examples/rpcalc/rpcalc.trs examples/calc++/calc++.trs examples/c++/simple.trs examples/c++/variant.trs examples/c++/variant-11.trs" || rm -f examples/mfcalc/mfcalc.trs examples/rpcalc/rpcalc.trs examples/calc++/calc++.trs examples/c++/simple.trs examples/c++/variant.trs examples/c++/variant-11.trs
+rm -f examples/c++/variant-11.hh
+test . = "." || test -z "" || rm -f 
+rm -f cscope.out cscope.in.out cscope.po.out cscope.files
+rm -f examples/mfcalc/*.o
+rm -f doc/.dirstamp
+rm -f examples/c++/variant.cc
+test -z "test-suite.log" || rm -f test-suite.log
+rm -f examples/rpcalc/*.o
+rm -f examples/c++/.deps/.dirstamp
+rm -f examples/c++/variant.hh
+rm -f lib/*.o
+rm -f examples/c++/.dirstamp
+rmdir lib/sys
+rm -f examples/calc++/scanner.cc
+rm -f examples/calc++/.deps/.dirstamp
+rm -f examples/mfcalc/mfcalc.c
+rm -f lib/glthread/*.o
+rm -f examples/calc++/.dirstamp
+rm -f lib/uniwidth/*.o
+rm -f examples/mfcalc/mfcalc.h
+rm -f examples/mfcalc/.deps/.dirstamp
+rm -f src/*.o
+rm -f examples/rpcalc/rpcalc.c
+rm -f examples/mfcalc/.dirstamp
+rm -f examples/rpcalc/rpcalc.h
+rm -f examples/rpcalc/.deps/.dirstamp
+test -z "doc/refcard.pdf doc/figs/example.eps doc/figs/example-reduce.eps doc/figs/example-shift.eps doc/figs/example.pdf doc/figs/example-reduce.pdf doc/figs/example-shift.pdf doc/figs/example.png doc/figs/example-reduce.png doc/figs/example-shift.png doc/Doxyfile examples/calc++/parser.cc examples/calc++/parser.hh examples/calc++/location.hh examples/calc++/parser.output examples/calc++/parser.stamp examples/calc++/scanner.cc examples/c++/simple.[ch] examples/c++/simple.output examples/c++/simple.output examples/c++/variant.output examples/c++/variant-11.output examples/mfcalc/mfcalc.[ch] examples/mfcalc/mfcalc.output examples/rpcalc/rpcalc.[ch] examples/rpcalc/rpcalc.output lib/configmake.h lib/configmake.h-t" || rm -f doc/refcard.pdf doc/figs/example.eps doc/figs/example-reduce.eps doc/figs/example-shift.eps doc/figs/example.pdf doc/figs/example-reduce.pdf doc/figs/example-shift.pdf doc/figs/example.png doc/figs/example-reduce.png doc/figs/example-shift.png doc/Doxyfile examples/calc++/parser.cc examples/calc++/parser.hh examples/calc++/location.hh examples/calc++/parser.output examples/calc++/parser.stamp examples/calc++/scanner.cc examples/c++/simple.[ch] examples/c++/simple.output examples/c++/simple.output examples/c++/variant.output examples/c++/variant-11.output examples/mfcalc/mfcalc.[ch] examples/mfcalc/mfcalc.output examples/rpcalc/rpcalc.[ch] examples/rpcalc/rpcalc.output lib/configmake.h lib/configmake.h-t
+rm -f examples/rpcalc/.dirstamp
+rm -f lib/.deps/.dirstamp
+rm -f lib/.dirstamp
+rm -f lib/glthread/.deps/.dirstamp
+rm -f lib/glthread/.dirstamp
+rm -f lib/uniwidth/.deps/.dirstamp
+rm -f lib/uniwidth/.dirstamp
+rm -f src/.deps/.dirstamp
+rm -f src/.dirstamp
+test -z "tests/atconfig ./tests/bison tests/atconfig tests/atlocal" || rm -f tests/atconfig ./tests/bison tests/atconfig tests/atlocal
+rm -rf doc/bison.t2d doc/html examples/*.dSYM examples/calc++/*.dSYM examples/c++/*.dSYM examples/mfcalc/*.dSYM examples/rpcalc/*.dSYM src/*.dSYM
+make[3]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+rm -f config.status config.cache config.log configure.lineno config.status.lineno
+rm -f examples/c++/.deps/simple-simple.Po
+rm -f examples/c++/.deps/variant-variant.Po
+rm -f examples/c++/.deps/variant_11-variant-11.Po
+rm -f examples/calc++/.deps/calc__-calc++.Po
+rm -f examples/calc++/.deps/calc__-driver.Po
+rm -f examples/calc++/.deps/calc__-parser.Po
+rm -f examples/calc++/.deps/calc__-scanner.Po
+rm -f examples/mfcalc/.deps/mfcalc-mfcalc.Po
+rm -f examples/rpcalc/.deps/rpcalc-rpcalc.Po
+rm -f lib/.deps/abitset.Po
+rm -f lib/.deps/argmatch.Po
+rm -f lib/.deps/asnprintf.Po
+rm -f lib/.deps/basename-lgpl.Po
+rm -f lib/.deps/basename.Po
+rm -f lib/.deps/binary-io.Po
+rm -f lib/.deps/bitrotate.Po
+rm -f lib/.deps/bitset.Po
+rm -f lib/.deps/bitset_stats.Po
+rm -f lib/.deps/bitsetv-print.Po
+rm -f lib/.deps/bitsetv.Po
+rm -f lib/.deps/c-ctype.Po
+rm -f lib/.deps/c-strcasecmp.Po
+rm -f lib/.deps/c-strncasecmp.Po
+rm -f lib/.deps/calloc.Po
+rm -f lib/.deps/cloexec.Po
+rm -f lib/.deps/close-stream.Po
+rm -f lib/.deps/close.Po
+rm -f lib/.deps/closeout.Po
+rm -f lib/.deps/concat-filename.Po
+rm -f lib/.deps/dirname-lgpl.Po
+rm -f lib/.deps/dirname.Po
+rm -f lib/.deps/dup-safer-flag.Po
+rm -f lib/.deps/dup-safer.Po
+rm -f lib/.deps/dup2.Po
+rm -f lib/.deps/ebitset.Po
+rm -f lib/.deps/error.Po
+rm -f lib/.deps/exitfail.Po
+rm -f lib/.deps/fatal-signal.Po
+rm -f lib/.deps/fcntl.Po
+rm -f lib/.deps/fd-hook.Po
+rm -f lib/.deps/fd-safer-flag.Po
+rm -f lib/.deps/fd-safer.Po
+rm -f lib/.deps/float.Po
+rm -f lib/.deps/fopen-safer.Po
+rm -f lib/.deps/fopen.Po
+rm -f lib/.deps/fpending.Po
+rm -f lib/.deps/fprintf.Po
+rm -f lib/.deps/frexp.Po
+rm -f lib/.deps/frexpl.Po
+rm -f lib/.deps/fseterr.Po
+rm -f lib/.deps/fstat.Po
+rm -f lib/.deps/get-errno.Po
+rm -f lib/.deps/getdtablesize.Po
+rm -f lib/.deps/gethrxtime.Po
+rm -f lib/.deps/getopt.Po
+rm -f lib/.deps/getopt1.Po
+rm -f lib/.deps/getprogname.Po
+rm -f lib/.deps/getrusage.Po
+rm -f lib/.deps/gettime.Po
+rm -f lib/.deps/gettimeofday.Po
+rm -f lib/.deps/hard-locale.Po
+rm -f lib/.deps/hash.Po
+rm -f lib/.deps/isnan.Po
+rm -f lib/.deps/isnand.Po
+rm -f lib/.deps/isnanf.Po
+rm -f lib/.deps/isnanl.Po
+rm -f lib/.deps/itold.Po
+rm -f lib/.deps/lbitset.Po
+rm -f lib/.deps/ldexpl.Po
+rm -f lib/.deps/localcharset.Po
+rm -f lib/.deps/localtime-buffer.Po
+rm -f lib/.deps/lstat.Po
+rm -f lib/.deps/main.Po
+rm -f lib/.deps/malloc.Po
+rm -f lib/.deps/malloca.Po
+rm -f lib/.deps/math.Po
+rm -f lib/.deps/mbrtowc.Po
+rm -f lib/.deps/mbsinit.Po
+rm -f lib/.deps/mbswidth.Po
+rm -f lib/.deps/memchr.Po
+rm -f lib/.deps/msvc-inval.Po
+rm -f lib/.deps/msvc-nothrow.Po
+rm -f lib/.deps/obstack.Po
+rm -f lib/.deps/obstack_printf.Po
+rm -f lib/.deps/open.Po
+rm -f lib/.deps/path-join.Po
+rm -f lib/.deps/perror.Po
+rm -f lib/.deps/pipe-safer.Po
+rm -f lib/.deps/pipe2-safer.Po
+rm -f lib/.deps/pipe2.Po
+rm -f lib/.deps/printf-args.Po
+rm -f lib/.deps/printf-frexp.Po
+rm -f lib/.deps/printf-frexpl.Po
+rm -f lib/.deps/printf-parse.Po
+rm -f lib/.deps/printf.Po
+rm -f lib/.deps/progname.Po
+rm -f lib/.deps/quotearg.Po
+rm -f lib/.deps/raise.Po
+rm -f lib/.deps/rawmemchr.Po
+rm -f lib/.deps/realloc.Po
+rm -f lib/.deps/sig-handler.Po
+rm -f lib/.deps/sigaction.Po
+rm -f lib/.deps/signbitd.Po
+rm -f lib/.deps/signbitf.Po
+rm -f lib/.deps/signbitl.Po
+rm -f lib/.deps/sigprocmask.Po
+rm -f lib/.deps/snprintf.Po
+rm -f lib/.deps/spawn-pipe.Po
+rm -f lib/.deps/spawn_faction_addclose.Po
+rm -f lib/.deps/spawn_faction_adddup2.Po
+rm -f lib/.deps/spawn_faction_addopen.Po
+rm -f lib/.deps/spawn_faction_destroy.Po
+rm -f lib/.deps/spawn_faction_init.Po
+rm -f lib/.deps/spawnattr_destroy.Po
+rm -f lib/.deps/spawnattr_init.Po
+rm -f lib/.deps/spawnattr_setflags.Po
+rm -f lib/.deps/spawnattr_setsigmask.Po
+rm -f lib/.deps/spawni.Po
+rm -f lib/.deps/spawnp.Po
+rm -f lib/.deps/sprintf.Po
+rm -f lib/.deps/stat-time.Po
+rm -f lib/.deps/stat-w32.Po
+rm -f lib/.deps/stat.Po
+rm -f lib/.deps/stpcpy.Po
+rm -f lib/.deps/strchrnul.Po
+rm -f lib/.deps/strdup.Po
+rm -f lib/.deps/strerror-override.Po
+rm -f lib/.deps/strerror.Po
+rm -f lib/.deps/strerror_r.Po
+rm -f lib/.deps/stripslash.Po
+rm -f lib/.deps/strndup.Po
+rm -f lib/.deps/strnlen.Po
+rm -f lib/.deps/strverscmp.Po
+rm -f lib/.deps/timespec.Po
+rm -f lib/.deps/timevar.Po
+rm -f lib/.deps/unistd.Po
+rm -f lib/.deps/unlink.Po
+rm -f lib/.deps/unsetenv.Po
+rm -f lib/.deps/vasnprintf.Po
+rm -f lib/.deps/vbitset.Po
+rm -f lib/.deps/vfprintf.Po
+rm -f lib/.deps/vsnprintf.Po
+rm -f lib/.deps/vsprintf.Po
+rm -f lib/.deps/wait-process.Po
+rm -f lib/.deps/waitpid.Po
+rm -f lib/.deps/wctype-h.Po
+rm -f lib/.deps/wcwidth.Po
+rm -f lib/.deps/xalloc-die.Po
+rm -f lib/.deps/xconcat-filename.Po
+rm -f lib/.deps/xmalloc.Po
+rm -f lib/.deps/xmemdup0.Po
+rm -f lib/.deps/xsize.Po
+rm -f lib/.deps/xstrndup.Po
+rm -f lib/.deps/xtime.Po
+rm -f lib/.deps/yyerror.Po
+rm -f lib/glthread/.deps/lock.Po
+rm -f lib/glthread/.deps/threadlib.Po
+rm -f lib/uniwidth/.deps/width.Po
+rm -f src/.deps/bison-AnnotationList.Po
+rm -f src/.deps/bison-InadequacyList.Po
+rm -f src/.deps/bison-LR0.Po
+rm -f src/.deps/bison-Sbitset.Po
+rm -f src/.deps/bison-assoc.Po
+rm -f src/.deps/bison-closure.Po
+rm -f src/.deps/bison-complain.Po
+rm -f src/.deps/bison-conflicts.Po
+rm -f src/.deps/bison-derives.Po
+rm -f src/.deps/bison-files.Po
+rm -f src/.deps/bison-getargs.Po
+rm -f src/.deps/bison-gram.Po
+rm -f src/.deps/bison-graphviz.Po
+rm -f src/.deps/bison-ielr.Po
+rm -f src/.deps/bison-lalr.Po
+rm -f src/.deps/bison-location.Po
+rm -f src/.deps/bison-main.Po
+rm -f src/.deps/bison-muscle-tab.Po
+rm -f src/.deps/bison-named-ref.Po
+rm -f src/.deps/bison-nullable.Po
+rm -f src/.deps/bison-output.Po
+rm -f src/.deps/bison-parse-gram.Po
+rm -f src/.deps/bison-print-xml.Po
+rm -f src/.deps/bison-print.Po
+rm -f src/.deps/bison-print_graph.Po
+rm -f src/.deps/bison-reader.Po
+rm -f src/.deps/bison-reduce.Po
+rm -f src/.deps/bison-relation.Po
+rm -f src/.deps/bison-scan-code-c.Po
+rm -f src/.deps/bison-scan-code.Po
+rm -f src/.deps/bison-scan-gram-c.Po
+rm -f src/.deps/bison-scan-gram.Po
+rm -f src/.deps/bison-scan-skel-c.Po
+rm -f src/.deps/bison-scan-skel.Po
+rm -f src/.deps/bison-state.Po
+rm -f src/.deps/bison-symlist.Po
+rm -f src/.deps/bison-symtab.Po
+rm -f src/.deps/bison-tables.Po
+rm -f src/.deps/bison-uniqstr.Po
+rm -f Makefile
+make[2]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+make[1]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+   dh_clean -O--parallel
+ERROR: ld.so: object 'libfakeroot-sysv.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+ debian/rules build
+dh build --parallel
+   dh_update_autotools_config -O--parallel
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+dh_auto_configure -- --disable-silent-rules
+	./configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --libexecdir=\${prefix}/lib/x86_64-linux-gnu --disable-maintainer-mode --disable-dependency-tracking --disable-silent-rules
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... icc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether icc accepts -g... yes
+checking for icc option to accept ISO C89... none needed
+checking whether icc understands -c and -o together... yes
+checking dependency style of icc... none
+checking for icc option to accept ISO C99... none needed
+checking for icc option to accept ISO Standard C... (cached) none needed
+checking whether we are using the GNU C++ compiler... yes
+checking whether icpc accepts -g... yes
+checking dependency style of icpc... none
+checking how to run the C preprocessor... icc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking whether _XOPEN_SOURCE should be defined... no
+checking for Minix Amsterdam compiler... no
+checking for ar... xiar
+checking for ranlib... ranlib
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking whether pragma GCC diagnostic push works... yes
+checking whether C++ compiler handles -Werror -Wunknown-warning-option... yes
+checking whether C++ compiler handles -fno-exceptions... yes
+checking whether C++ compiler accepts -std=c++98... yes
+checking whether C++ compiler accepts -std=c++03... yes
+checking whether C++ compiler accepts -std=c++11... yes
+checking whether C++ compiler accepts -std=c++14... yes
+checking whether C++ compiler accepts -std=c++17... yes
+checking whether C++ compiler accepts -std=c++2a... no
+checking whether C++ compiler accepts -std=c++2a -stdlib=libc++... no
+checking whether icc supports POSIXLY_CORRECT=1... yes
+checking whether icpc builds executables that work... yes
+checking whether icpc supports POSIXLY_CORRECT=1... yes
+checking for flex... flex
+checking whether lex is flex... yes
+checking lex output file root... lex.yy
+checking lex library... none needed
+checking whether yytext is a pointer... no
+checking for bison... bison -y
+checking for ranlib... (cached) ranlib
+checking for GNU M4 that supports accurate traces... /usr/bin/m4
+checking whether /usr/bin/m4 accepts --gnu... yes
+checking how m4 supports trace files... --debugfile
+checking for perl... /usr/bin/perl
+checking for xsltproc... /usr/bin/xsltproc
+checking for locale.h... yes
+checking for sys/socket.h... yes
+checking for unistd.h... (cached) yes
+checking for stdio_ext.h... yes
+checking for features.h... yes
+checking for sys/stat.h... (cached) yes
+checking for getopt.h... yes
+checking for sys/cdefs.h... yes
+checking for sys/time.h... yes
+checking for limits.h... yes
+checking for wchar.h... yes
+checking for stdint.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for math.h... yes
+checking for sys/mman.h... yes
+checking for sys/param.h... yes
+checking for spawn.h... yes
+checking for sys/resource.h... yes
+checking for sys/times.h... yes
+checking for sys/wait.h... yes
+checking for crtdefs.h... no
+checking for wctype.h... yes
+checking for inline... inline
+checking for size_t... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking whether malloc, realloc, calloc are POSIX compliant... yes
+checking for _set_invalid_parameter_handler... no
+checking for fcntl... yes
+checking for symlink... yes
+checking for vasnprintf... no
+checking for snprintf... yes
+checking for __fseterr... no
+checking for getdtablesize... yes
+checking for microuptime... no
+checking for nanouptime... no
+checking for getprogname... no
+checking for getexecname... no
+checking for getrusage... yes
+checking for gettimeofday... yes
+checking for lstat... yes
+checking for mbsinit... yes
+checking for mbrtowc... yes
+checking for isascii... yes
+checking for mprotect... yes
+checking for obstack_printf... yes
+checking for strerror_r... yes
+checking for __xpg_strerror_r... yes
+checking for pipe2... yes
+checking for sigaction... yes
+checking for sigaltstack... yes
+checking for siginterrupt... yes
+checking for strdup... yes
+checking for catgets... yes
+checking for strndup... yes
+checking for pipe... yes
+checking for iswcntrl... yes
+checking for wcwidth... yes
+checking for setlocale... yes
+checking whether // is distinct from /... no
+checking if environ is properly declared... yes
+checking whether the preprocessor supports include_next... yes
+checking whether system header files limit the line length... no
+checking for complete errno.h... yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... (cached) yes
+checking whether strerror_r returns char *... yes
+checking for sig_atomic_t... yes
+checking for working fcntl.h... yes
+checking for pid_t... yes
+checking for mode_t... yes
+checking for stdint.h... yes
+checking for inttypes.h... yes
+checking whether printf supports size specifiers as in C99... yes
+checking whether printf supports 'long double' arguments... yes
+checking whether printf supports infinite 'double' arguments... yes
+checking whether byte ordering is bigendian... no
+checking whether long double and double are the same... no
+checking whether printf supports infinite 'long double' arguments... yes
+checking whether printf supports the 'a' and 'A' directives... yes
+checking whether printf supports the 'F' directive... yes
+checking whether printf supports the 'n' directive... no
+checking whether printf supports the 'ls' directive... yes
+checking whether printf supports POSIX/XSI format strings with positions... yes
+checking whether printf supports the grouping flag... yes
+checking whether printf supports the left-adjust flag correctly... yes
+checking whether printf supports the zero flag correctly... yes
+checking whether printf supports large precisions... yes
+checking whether printf survives out-of-memory conditions... yes
+checking for unsigned long long int... yes
+checking for long long int... yes
+checking for wchar_t... yes
+checking for wint_t... yes
+checking whether wint_t is too small... no
+checking for intmax_t... yes
+checking where to find the exponent in a 'double'... word 1 bit 20
+checking whether snprintf returns a byte count as in C99... yes
+checking for snprintf... (cached) yes
+checking for strnlen... yes
+checking for wcslen... yes
+checking for wcsnlen... yes
+checking for mbrtowc... (cached) yes
+checking for wcrtomb... yes
+checking whether _snprintf is declared... no
+checking whether frexp() can be used without linking with libm... yes
+checking whether alarm is declared... yes
+checking whether stat file-mode macros are broken... no
+checking for nlink_t... yes
+checking whether getdtablesize is declared... yes
+checking for arithmetic hrtime_t... no
+checking for getopt.h... (cached) yes
+checking for getopt_long_only... yes
+checking whether getopt is POSIX compatible... yes
+checking for working GNU getopt function... yes
+checking for working GNU getopt_long function... yes
+checking for C/C++ restrict keyword... __restrict
+checking for struct timeval... yes
+checking for wide-enough struct timeval.tv_sec member... yes
+checking whether limits.h has LLONG_MAX, WORD_BIT, ULLONG_WIDTH etc.... yes
+checking whether stdint.h conforms to C99... yes
+checking whether stdint.h predates C++11... no
+checking whether stdint.h has UINTMAX_WIDTH etc.... yes
+checking for inttypes.h... (cached) yes
+checking whether the inttypes.h PRIxNN macros are broken... no
+checking where to find the exponent in a 'float'... word 0 bit 23
+checking whether isnan(float) can be used without linking with libm... yes
+checking whether isnan(float) works... yes
+checking whether isnan(double) can be used without linking with libm... yes
+checking whether isnan(long double) can be used without linking with libm... yes
+checking whether isnanl works... yes
+checking whether ldexp() can be used without linking with libm... yes
+checking for nl_langinfo and CODESET... yes
+checking for ld... xild
+checking if the linker (xild) is GNU ld... yes
+checking for shared library run path origin... done
+checking 32-bit host C ABI... no
+checking for the common suffixes of directories in the library search path... lib,lib
+checking whether imported symbols can be declared weak... yes
+checking whether the linker supports --as-needed... yes
+checking whether the linker supports --push-state... yes
+checking pthread.h usability... yes
+checking pthread.h presence... yes
+checking for pthread.h... yes
+checking for pthread_kill in -lpthread... yes
+checking for multithread API to use... posix
+checking whether lstat correctly handles trailing slash... yes
+checking for a sed that does not truncate output... /bin/sed
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... yes
+checking for mbstate_t... yes
+checking for a traditional japanese locale... none
+checking for a transitional chinese locale... none
+checking for a french Unicode locale... none
+checking for mmap... yes
+checking for MAP_ANONYMOUS... yes
+checking whether memchr works... yes
+checking whether <limits.h> defines MIN and MAX... no
+checking whether <sys/param.h> defines MIN and MAX... yes
+checking whether obstack_printf is declared... yes
+checking for O_CLOEXEC... yes
+checking for promoted mode_t type... mode_t
+checking whether strerror(0) succeeds... yes
+checking for strerror_r with POSIX signature... yes
+checking whether strerror_r works... no
+checking whether strerror_r is declared... (cached) yes
+checking for library containing posix_spawn... none required
+checking for posix_spawn... yes
+checking whether posix_spawn works... yes
+checking whether posix_spawnattr_setschedpolicy is supported... yes
+checking whether posix_spawnattr_setschedparam is supported... yes
+checking for ptrdiff_t... yes
+checking whether C symbols are prefixed with underscore at the linker level... no
+checking for sigset_t... yes
+checking for uid_t in sys/types.h... yes
+checking whether snprintf is declared... yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking whether strdup is declared... yes
+checking whether strndup is declared... yes
+checking whether strnlen is declared... yes
+checking for struct timespec in <time.h>... yes
+checking whether clearerr_unlocked is declared... yes
+checking whether feof_unlocked is declared... yes
+checking whether ferror_unlocked is declared... yes
+checking whether fflush_unlocked is declared... yes
+checking whether fgets_unlocked is declared... yes
+checking whether fputc_unlocked is declared... yes
+checking whether fputs_unlocked is declared... yes
+checking whether fread_unlocked is declared... yes
+checking whether fwrite_unlocked is declared... yes
+checking whether getc_unlocked is declared... yes
+checking whether getchar_unlocked is declared... yes
+checking whether putc_unlocked is declared... yes
+checking whether putchar_unlocked is declared... yes
+checking whether unsetenv is declared... yes
+checking whether vsnprintf is declared... yes
+checking whether <wchar.h> uses 'inline' correctly... yes
+checking for alloca as a compiler built-in... yes
+checking whether to enable assertions... yes
+checking for library containing clock_gettime... none required
+checking for clock_gettime... yes
+checking for clock_settime... yes
+checking whether // is distinct from /... (cached) no
+checking whether dup2 works... yes
+checking for error_at_line... yes
+checking whether fcntl handles F_DUPFD correctly... yes
+checking whether fcntl understands F_DUPFD_CLOEXEC... needs runtime check
+checking whether conversion from 'int' to 'long double' works... yes
+checking whether fopen recognizes a trailing slash... yes
+checking for __fpending... yes
+checking whether __fpending is declared... yes
+checking for ptrdiff_t... (cached) yes
+checking whether frexp works... yes
+checking whether frexpl is declared... yes
+checking whether frexpl() can be used without linking with libm... yes
+checking whether frexpl works... yes
+checking whether getdtablesize works... yes
+checking whether gethrtime is declared... no
+checking whether CLOCK_MONOTONIC or CLOCK_REALTIME is defined... yes
+checking whether program_invocation_name is declared... yes
+checking whether program_invocation_short_name is declared... yes
+checking whether __argv is declared... no
+checking whether gettimeofday clobbers localtime buffer... no
+checking for gettimeofday with POSIX signature... yes
+checking whether INT32_MAX < INTMAX_MAX... yes
+checking whether INT64_MAX == LONG_MAX... yes
+checking whether UINT32_MAX < UINTMAX_MAX... yes
+checking whether UINT64_MAX == ULONG_MAX... yes
+checking whether isnan macro works... yes
+checking whether isnan(double) can be used without linking with libm... (cached) yes
+checking whether isnan(double) can be used without linking with libm... (cached) yes
+checking whether isnan(float) can be used without linking with libm... (cached) yes
+checking whether isnan(float) works... (cached) yes
+checking whether isnan(float) can be used without linking with libm... (cached) yes
+checking whether isnan(float) works... (cached) yes
+checking whether isnan(long double) can be used without linking with libm... (cached) yes
+checking whether isnanl works... (cached) yes
+checking whether isnan(long double) can be used without linking with libm... (cached) yes
+checking whether isnanl works... (cached) yes
+checking whether ldexpl is declared... yes
+checking whether ldexpl() can be used without linking with libm... yes
+checking whether ldexpl works... yes
+checking for pthread_rwlock_t... yes
+checking whether pthread_rwlock_rdlock prefers a writer to a reader... no
+checking for stdlib.h... (cached) yes
+checking for GNU libc compatible malloc... (cached) yes
+checking whether NAN macro works... yes
+checking whether HUGE_VAL works... yes
+checking whether mbrtowc handles incomplete characters... guessing yes
+checking whether mbrtowc works as well as mbtowc... guessing yes
+checking whether mbrtowc handles a NULL pwc argument... guessing yes
+checking whether mbrtowc handles a NULL string argument... guessing yes
+checking whether mbrtowc has a correct return value... guessing yes
+checking whether mbrtowc returns 0 when parsing a NUL character... guessing yes
+checking whether mbrtowc works on empty input... yes
+checking whether the C locale is free of encoding errors... no
+checking whether mbrtowc handles incomplete characters... (cached) guessing yes
+checking whether mbrtowc works as well as mbtowc... (cached) guessing yes
+checking whether mbswidth is declared in <wchar.h>... no
+checking for mbstate_t... (cached) yes
+checking for obstacks that work with any size object... yes
+checking whether open recognizes a trailing slash... yes
+checking whether posix_spawn_file_actions_addclose works... yes
+checking whether posix_spawn_file_actions_adddup2 works... yes
+checking whether posix_spawn_file_actions_addopen works... yes
+checking whether frexp works... (cached) yes
+checking whether ldexp can be used without linking with libm... (cached) yes
+checking whether frexpl() can be used without linking with libm... (cached) yes
+checking whether frexpl works... (cached) yes
+checking whether frexpl is declared... (cached) yes
+checking whether ldexpl() can be used without linking with libm... (cached) yes
+checking whether ldexpl works... (cached) yes
+checking whether ldexpl is declared... (cached) yes
+checking whether program_invocation_name is declared... (cached) yes
+checking whether program_invocation_short_name is declared... (cached) yes
+checking for raise... yes
+checking for sigprocmask... yes
+checking for rawmemchr... yes
+checking for struct sigaction.sa_sigaction... yes
+checking for volatile sig_atomic_t... yes
+checking for sighandler_t... yes
+checking for signbit macro... yes
+checking for signbit compiler built-ins... yes
+checking for sigprocmask... (cached) yes
+checking for stdint.h... (cached) yes
+checking for SIZE_MAX... yes
+checking for snprintf... (cached) yes
+checking whether snprintf respects a size of 1... yes
+checking whether printf supports POSIX/XSI format strings with positions... (cached) yes
+checking for snprintf... (cached) yes
+checking whether snprintf truncates the result as in C99... yes
+checking whether snprintf fully supports the 'n' directive... no
+checking whether snprintf respects a size of 1... (cached) yes
+checking whether vsnprintf respects a zero size as in C99... yes
+checking for ptrdiff_t... (cached) yes
+checking for posix_spawnattr_t... yes
+checking for posix_spawn_file_actions_t... yes
+checking for ptrdiff_t... (cached) yes
+checking for ssize_t... yes
+checking whether stat handles trailing slashes on files... yes
+checking for struct stat.st_atim.tv_nsec... yes
+checking whether struct stat.st_atim is of type struct timespec... yes
+checking for struct stat.st_birthtimespec.tv_nsec... no
+checking for struct stat.st_birthtimensec... no
+checking for struct stat.st_birthtim.tv_nsec... no
+checking for good max_align_t... yes
+checking whether NULL can be used in arbitrary expressions... yes
+checking which flavor of printf attribute matches inttypes macros... system
+checking for stpcpy... yes
+checking for strchrnul... yes
+checking whether strchrnul works... yes
+checking for working strerror function... yes
+checking for working strndup... yes
+checking for working strnlen... yes
+checking for strverscmp... yes
+checking for nlink_t... (cached) yes
+checking for struct tms... yes
+checking whether unlink honors trailing slashes... yes
+checking whether unlink of a parent directory fails as it should... guessing yes
+checking for unsetenv... yes
+checking for unsetenv() return type... int
+checking whether unsetenv obeys POSIX... yes
+checking for ptrdiff_t... (cached) yes
+checking for ptrdiff_t... (cached) yes
+checking for vsnprintf... yes
+checking whether snprintf respects a size of 1... (cached) yes
+checking whether printf supports POSIX/XSI format strings with positions... (cached) yes
+checking for vsnprintf... (cached) yes
+checking whether snprintf truncates the result as in C99... (cached) yes
+checking whether snprintf fully supports the 'n' directive... (cached) no
+checking whether snprintf respects a size of 1... (cached) yes
+checking whether vsnprintf respects a zero size as in C99... (cached) yes
+checking for ptrdiff_t... (cached) yes
+checking for ptrdiff_t... (cached) yes
+checking for waitid... yes
+checking whether iswcntrl works... yes
+checking for towlower... yes
+checking for wctype_t... yes
+checking for wctrans_t... yes
+checking whether wcwidth is declared... yes
+checking whether wcwidth works reasonably in UTF-8 locales... yes
+checking for stdint.h... (cached) yes
+checking if malloc debugging is wanted... no
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/msgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for CFLocaleCopyPreferredLanguages... no
+checking for GNU gettext in libc... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... libc
+checking for valgrind... no
+checking Valgrind suppression file... 
+checking for Java compiler... javac -target 1.7 -source 1.7
+checking for Java virtual machine... java
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating javacomp.sh
+config.status: creating javaexec.sh
+config.status: creating runtime-po/Makefile.in
+config.status: creating etc/bench.pl
+config.status: creating tests/atlocal
+config.status: creating tests/bison
+config.status: creating Makefile
+config.status: creating po/Makefile.in
+config.status: creating doc/yacc.1
+config.status: creating lib/config.h
+config.status: executing depfiles commands
+config.status: executing po-directories commands
+config.status: creating runtime-po/POTFILES
+config.status: creating runtime-po/Makefile
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing tests/atconfig commands
+configure: WARNING: unrecognized options: --disable-maintainer-mode
+make[1]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+# Touch all files in the dependency tree of bison.info to
+# inhibit makeinfo invocation in the build process.
+install -d /home/richard/debs/NONGIT/bison/bison-3.2.2/doc/figs
+touch --date="Jan 01 2000" \
+	/home/richard/debs/NONGIT/bison/bison-3.2.2/doc/bison.info \
+	/home/richard/debs/NONGIT/bison/bison-3.2.2/doc/bison.texi \
+	/home/richard/debs/NONGIT/bison/bison-3.2.2/doc/bison.help \
+	/home/richard/debs/NONGIT/bison/bison-3.2.2/doc/figs/example.txt \
+	/home/richard/debs/NONGIT/bison/bison-3.2.2/doc/figs/example-reduce.txt \
+	/home/richard/debs/NONGIT/bison/bison-3.2.2/doc/figs/example-shift.txt \
+	/home/richard/debs/NONGIT/bison/bison-3.2.2/doc/*.texi \
+	/home/richard/debs/NONGIT/bison/bison-3.2.2/build-aux/cross-options.pl \
+	/home/richard/debs/NONGIT/bison/bison-3.2.2/src/getargs.c
+dh_auto_build
+	make V=1 -j8
+make[2]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+rm -f lib/alloca.h-t lib/alloca.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  cat ./lib/alloca.in.h; \
+} > lib/alloca.h-t && \
+mv -f lib/alloca.h-t lib/alloca.h
+rm -f lib/configmake.h-t && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  echo '#define PREFIX "/usr"'; \
+  echo '#define EXEC_PREFIX "/usr"'; \
+  echo '#define BINDIR "/usr/bin"'; \
+  echo '#define SBINDIR "/usr/sbin"'; \
+  echo '#define LIBEXECDIR "/usr/lib/x86_64-linux-gnu"'; \
+  echo '#define DATAROOTDIR "/usr/share"'; \
+  echo '#define DATADIR "/usr/share"'; \
+  echo '#define SYSCONFDIR "/etc"'; \
+  echo '#define SHAREDSTATEDIR "/usr/com"'; \
+  echo '#define LOCALSTATEDIR "/var"'; \
+  echo '#define RUNSTATEDIR "/var/run"'; \
+  echo '#define INCLUDEDIR "/usr/include"'; \
+  echo '#define OLDINCLUDEDIR "/usr/include"'; \
+  echo '#define DOCDIR "/usr/share/doc/bison"'; \
+  echo '#define INFODIR "/usr/share/info"'; \
+  echo '#define HTMLDIR "/usr/share/doc/bison"'; \
+  echo '#define DVIDIR "/usr/share/doc/bison"'; \
+  echo '#define PDFDIR "/usr/share/doc/bison"'; \
+  echo '#define PSDIR "/usr/share/doc/bison"'; \
+  echo '#define LIBDIR "/usr/lib/x86_64-linux-gnu"'; \
+  echo '#define LISPDIR "/usr/share/emacs/site-lisp"'; \
+  echo '#define LOCALEDIR "/usr/share/locale"'; \
+  echo '#define MANDIR "/usr/share/man"'; \
+  echo '#define MANEXT ""'; \
+  echo '#define PKGDATADIR "/usr/share/bison"'; \
+  echo '#define PKGINCLUDEDIR "/usr/include/bison"'; \
+  echo '#define PKGLIBDIR "/usr/lib/x86_64-linux-gnu/bison"'; \
+  echo '#define PKGLIBEXECDIR "/usr/lib/x86_64-linux-gnu/bison"'; \
+} | sed '/""/d' > lib/configmake.h-t && \
+mv -f lib/configmake.h-t lib/configmake.h
+rm -f lib/fcntl.h-t lib/fcntl.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_FCNTL_H''@|<fcntl.h>|g' \
+      -e 's/@''GNULIB_FCNTL''@/1/g' \
+      -e 's/@''GNULIB_NONBLOCKING''@/0/g' \
+      -e 's/@''GNULIB_OPEN''@/1/g' \
+      -e 's/@''GNULIB_OPENAT''@/0/g' \
+      -e 's|@''HAVE_FCNTL''@|1|g' \
+      -e 's|@''HAVE_OPENAT''@|1|g' \
+      -e 's|@''REPLACE_FCNTL''@|1|g' \
+      -e 's|@''REPLACE_OPEN''@|0|g' \
+      -e 's|@''REPLACE_OPENAT''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h' \
+      < ./lib/fcntl.in.h; \
+} > lib/fcntl.h-t && \
+mv lib/fcntl.h-t lib/fcntl.h
+rm -f lib/inttypes.h-t lib/inttypes.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's/@''HAVE_INTTYPES_H''@/1/g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_INTTYPES_H''@|<inttypes.h>|g' \
+      -e 's/@''PRI_MACROS_BROKEN''@/0/g' \
+      -e 's/@''APPLE_UNIVERSAL_BUILD''@/0/g' \
+      -e 's/@''HAVE_LONG_LONG_INT''@/1/g' \
+      -e 's/@''HAVE_UNSIGNED_LONG_LONG_INT''@/1/g' \
+      -e 's/@''PRIPTR_PREFIX''@/"l"/g' \
+      -e 's/@''GNULIB_IMAXABS''@/0/g' \
+      -e 's/@''GNULIB_IMAXDIV''@/0/g' \
+      -e 's/@''GNULIB_STRTOIMAX''@/0/g' \
+      -e 's/@''GNULIB_STRTOUMAX''@/0/g' \
+      -e 's/@''HAVE_DECL_IMAXABS''@/1/g' \
+      -e 's/@''HAVE_DECL_IMAXDIV''@/1/g' \
+      -e 's/@''HAVE_DECL_STRTOIMAX''@/1/g' \
+      -e 's/@''HAVE_DECL_STRTOUMAX''@/1/g' \
+      -e 's/@''HAVE_IMAXDIV_T''@/1/g' \
+      -e 's/@''REPLACE_STRTOIMAX''@/0/g' \
+      -e 's/@''REPLACE_STRTOUMAX''@/0/g' \
+      -e 's/@''INT32_MAX_LT_INTMAX_MAX''@/1/g' \
+      -e 's/@''INT64_MAX_EQ_LONG_MAX''@/1/g' \
+      -e 's/@''UINT32_MAX_LT_UINTMAX_MAX''@/1/g' \
+      -e 's/@''UINT64_MAX_EQ_ULONG_MAX''@/1/g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h' \
+      < ./lib/inttypes.in.h; \
+} > lib/inttypes.h-t && \
+mv lib/inttypes.h-t lib/inttypes.h
+rm -f lib/limits.h-t lib/limits.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_LIMITS_H''@|<limits.h>|g' \
+      < ./lib/limits.in.h; \
+} > lib/limits.h-t && \
+mv lib/limits.h-t lib/limits.h
+rm -f lib/math.h-t lib/math.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT_AS_FIRST_DIRECTIVE''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_AS_FIRST_DIRECTIVE_MATH_H''@|<math.h>|g' \
+      -e 's/@''GNULIB_ACOSF''@/0/g' \
+      -e 's/@''GNULIB_ACOSL''@/0/g' \
+      -e 's/@''GNULIB_ASINF''@/0/g' \
+      -e 's/@''GNULIB_ASINL''@/0/g' \
+      -e 's/@''GNULIB_ATANF''@/0/g' \
+      -e 's/@''GNULIB_ATANL''@/0/g' \
+      -e 's/@''GNULIB_ATAN2F''@/0/g' \
+      -e 's/@''GNULIB_CBRT''@/0/g' \
+      -e 's/@''GNULIB_CBRTF''@/0/g' \
+      -e 's/@''GNULIB_CBRTL''@/0/g' \
+      -e 's/@''GNULIB_CEIL''@/0/g' \
+      -e 's/@''GNULIB_CEILF''@/0/g' \
+      -e 's/@''GNULIB_CEILL''@/0/g' \
+      -e 's/@''GNULIB_COPYSIGN''@/0/g' \
+      -e 's/@''GNULIB_COPYSIGNF''@/0/g' \
+      -e 's/@''GNULIB_COPYSIGNL''@/0/g' \
+      -e 's/@''GNULIB_COSF''@/0/g' \
+      -e 's/@''GNULIB_COSL''@/0/g' \
+      -e 's/@''GNULIB_COSHF''@/0/g' \
+      -e 's/@''GNULIB_EXPF''@/0/g' \
+      -e 's/@''GNULIB_EXPL''@/0/g' \
+      -e 's/@''GNULIB_EXP2''@/0/g' \
+      -e 's/@''GNULIB_EXP2F''@/0/g' \
+      -e 's/@''GNULIB_EXP2L''@/0/g' \
+      -e 's/@''GNULIB_EXPM1''@/0/g' \
+      -e 's/@''GNULIB_EXPM1F''@/0/g' \
+      -e 's/@''GNULIB_EXPM1L''@/0/g' \
+      -e 's/@''GNULIB_FABSF''@/0/g' \
+      -e 's/@''GNULIB_FABSL''@/0/g' \
+      -e 's/@''GNULIB_FLOOR''@/0/g' \
+      -e 's/@''GNULIB_FLOORF''@/0/g' \
+      -e 's/@''GNULIB_FLOORL''@/0/g' \
+      -e 's/@''GNULIB_FMA''@/0/g' \
+      -e 's/@''GNULIB_FMAF''@/0/g' \
+      -e 's/@''GNULIB_FMAL''@/0/g' \
+      -e 's/@''GNULIB_FMOD''@/0/g' \
+      -e 's/@''GNULIB_FMODF''@/0/g' \
+      -e 's/@''GNULIB_FMODL''@/0/g' \
+      -e 's/@''GNULIB_FREXPF''@/0/g' \
+      -e 's/@''GNULIB_FREXP''@/1/g' \
+      -e 's/@''GNULIB_FREXPL''@/1/g' \
+      -e 's/@''GNULIB_HYPOT''@/0/g' \
+      -e 's/@''GNULIB_HYPOTF''@/0/g' \
+      -e 's/@''GNULIB_HYPOTL''@/0/g' \
+      < ./lib/math.in.h | \
+  sed -e 's/@''GNULIB_ILOGB''@/0/g' \
+      -e 's/@''GNULIB_ILOGBF''@/0/g' \
+      -e 's/@''GNULIB_ILOGBL''@/0/g' \
+      -e 's/@''GNULIB_ISFINITE''@/0/g' \
+      -e 's/@''GNULIB_ISINF''@/0/g' \
+      -e 's/@''GNULIB_ISNAN''@/1/g' \
+      -e 's/@''GNULIB_ISNANF''@/1/g' \
+      -e 's/@''GNULIB_ISNAND''@/1/g' \
+      -e 's/@''GNULIB_ISNANL''@/1/g' \
+      -e 's/@''GNULIB_LDEXPF''@/0/g' \
+      -e 's/@''GNULIB_LDEXPL''@/1/g' \
+      -e 's/@''GNULIB_LOG''@/0/g' \
+      -e 's/@''GNULIB_LOGF''@/0/g' \
+      -e 's/@''GNULIB_LOGL''@/0/g' \
+      -e 's/@''GNULIB_LOG10''@/0/g' \
+      -e 's/@''GNULIB_LOG10F''@/0/g' \
+      -e 's/@''GNULIB_LOG10L''@/0/g' \
+      -e 's/@''GNULIB_LOG1P''@/0/g' \
+      -e 's/@''GNULIB_LOG1PF''@/0/g' \
+      -e 's/@''GNULIB_LOG1PL''@/0/g' \
+      -e 's/@''GNULIB_LOG2''@/0/g' \
+      -e 's/@''GNULIB_LOG2F''@/0/g' \
+      -e 's/@''GNULIB_LOG2L''@/0/g' \
+      -e 's/@''GNULIB_LOGB''@/0/g' \
+      -e 's/@''GNULIB_LOGBF''@/0/g' \
+      -e 's/@''GNULIB_LOGBL''@/0/g' \
+      -e 's/@''GNULIB_MODF''@/0/g' \
+      -e 's/@''GNULIB_MODFF''@/0/g' \
+      -e 's/@''GNULIB_MODFL''@/0/g' \
+      -e 's/@''GNULIB_POWF''@/0/g' \
+      -e 's/@''GNULIB_REMAINDER''@/0/g' \
+      -e 's/@''GNULIB_REMAINDERF''@/0/g' \
+      -e 's/@''GNULIB_REMAINDERL''@/0/g' \
+      -e 's/@''GNULIB_RINT''@/0/g' \
+      -e 's/@''GNULIB_RINTF''@/0/g' \
+      -e 's/@''GNULIB_RINTL''@/0/g' \
+      -e 's/@''GNULIB_ROUND''@/0/g' \
+      -e 's/@''GNULIB_ROUNDF''@/0/g' \
+      -e 's/@''GNULIB_ROUNDL''@/0/g' \
+      -e 's/@''GNULIB_SIGNBIT''@/1/g' \
+      -e 's/@''GNULIB_SINF''@/0/g' \
+      -e 's/@''GNULIB_SINL''@/0/g' \
+      -e 's/@''GNULIB_SINHF''@/0/g' \
+      -e 's/@''GNULIB_SQRTF''@/0/g' \
+      -e 's/@''GNULIB_SQRTL''@/0/g' \
+      -e 's/@''GNULIB_TANF''@/0/g' \
+      -e 's/@''GNULIB_TANL''@/0/g' \
+      -e 's/@''GNULIB_TANHF''@/0/g' \
+      -e 's/@''GNULIB_TRUNC''@/0/g' \
+      -e 's/@''GNULIB_TRUNCF''@/0/g' \
+      -e 's/@''GNULIB_TRUNCL''@/0/g' \
+  | \
+  sed -e 's|@''HAVE_ACOSF''@|1|g' \
+      -e 's|@''HAVE_ACOSL''@|1|g' \
+      -e 's|@''HAVE_ASINF''@|1|g' \
+      -e 's|@''HAVE_ASINL''@|1|g' \
+      -e 's|@''HAVE_ATANF''@|1|g' \
+      -e 's|@''HAVE_ATANL''@|1|g' \
+      -e 's|@''HAVE_ATAN2F''@|1|g' \
+      -e 's|@''HAVE_CBRT''@|1|g' \
+      -e 's|@''HAVE_CBRTF''@|1|g' \
+      -e 's|@''HAVE_CBRTL''@|1|g' \
+      -e 's|@''HAVE_COPYSIGN''@|1|g' \
+      -e 's|@''HAVE_COPYSIGNL''@|1|g' \
+      -e 's|@''HAVE_COSF''@|1|g' \
+      -e 's|@''HAVE_COSL''@|1|g' \
+      -e 's|@''HAVE_COSHF''@|1|g' \
+      -e 's|@''HAVE_EXPF''@|1|g' \
+      -e 's|@''HAVE_EXPL''@|1|g' \
+      -e 's|@''HAVE_EXPM1''@|1|g' \
+      -e 's|@''HAVE_EXPM1F''@|1|g' \
+      -e 's|@''HAVE_FABSF''@|1|g' \
+      -e 's|@''HAVE_FABSL''@|1|g' \
+      -e 's|@''HAVE_FMA''@|1|g' \
+      -e 's|@''HAVE_FMAF''@|1|g' \
+      -e 's|@''HAVE_FMAL''@|1|g' \
+      -e 's|@''HAVE_FMODF''@|1|g' \
+      -e 's|@''HAVE_FMODL''@|1|g' \
+      -e 's|@''HAVE_FREXPF''@|1|g' \
+      -e 's|@''HAVE_HYPOTF''@|1|g' \
+      -e 's|@''HAVE_HYPOTL''@|1|g' \
+      -e 's|@''HAVE_ILOGB''@|1|g' \
+      -e 's|@''HAVE_ILOGBF''@|1|g' \
+      -e 's|@''HAVE_ILOGBL''@|1|g' \
+      -e 's|@''HAVE_ISNANF''@|1|g' \
+      -e 's|@''HAVE_ISNAND''@|1|g' \
+      -e 's|@''HAVE_ISNANL''@|1|g' \
+      -e 's|@''HAVE_LDEXPF''@|1|g' \
+      -e 's|@''HAVE_LOGF''@|1|g' \
+      -e 's|@''HAVE_LOGL''@|1|g' \
+      -e 's|@''HAVE_LOG10F''@|1|g' \
+      -e 's|@''HAVE_LOG10L''@|1|g' \
+      -e 's|@''HAVE_LOG1P''@|1|g' \
+      -e 's|@''HAVE_LOG1PF''@|1|g' \
+      -e 's|@''HAVE_LOG1PL''@|1|g' \
+      -e 's|@''HAVE_LOGBF''@|1|g' \
+      -e 's|@''HAVE_LOGBL''@|1|g' \
+      -e 's|@''HAVE_MODFF''@|1|g' \
+      -e 's|@''HAVE_MODFL''@|1|g' \
+      -e 's|@''HAVE_POWF''@|1|g' \
+      -e 's|@''HAVE_REMAINDER''@|1|g' \
+      -e 's|@''HAVE_REMAINDERF''@|1|g' \
+      -e 's|@''HAVE_RINT''@|1|g' \
+      -e 's|@''HAVE_RINTL''@|1|g' \
+      -e 's|@''HAVE_SINF''@|1|g' \
+      -e 's|@''HAVE_SINL''@|1|g' \
+      -e 's|@''HAVE_SINHF''@|1|g' \
+      -e 's|@''HAVE_SQRTF''@|1|g' \
+      -e 's|@''HAVE_SQRTL''@|1|g' \
+      -e 's|@''HAVE_TANF''@|1|g' \
+      -e 's|@''HAVE_TANL''@|1|g' \
+      -e 's|@''HAVE_TANHF''@|1|g' \
+      -e 's|@''HAVE_DECL_ACOSL''@|1|g' \
+      -e 's|@''HAVE_DECL_ASINL''@|1|g' \
+      -e 's|@''HAVE_DECL_ATANL''@|1|g' \
+      -e 's|@''HAVE_DECL_CBRTF''@|1|g' \
+      -e 's|@''HAVE_DECL_CBRTL''@|1|g' \
+      -e 's|@''HAVE_DECL_CEILF''@|1|g' \
+      -e 's|@''HAVE_DECL_CEILL''@|1|g' \
+      -e 's|@''HAVE_DECL_COPYSIGNF''@|1|g' \
+      -e 's|@''HAVE_DECL_COSL''@|1|g' \
+      -e 's|@''HAVE_DECL_EXPL''@|1|g' \
+      -e 's|@''HAVE_DECL_EXP2''@|1|g' \
+      -e 's|@''HAVE_DECL_EXP2F''@|1|g' \
+      -e 's|@''HAVE_DECL_EXP2L''@|1|g' \
+      -e 's|@''HAVE_DECL_EXPM1L''@|1|g' \
+      -e 's|@''HAVE_DECL_FLOORF''@|1|g' \
+      -e 's|@''HAVE_DECL_FLOORL''@|1|g' \
+      -e 's|@''HAVE_DECL_FREXPL''@|1|g' \
+      -e 's|@''HAVE_DECL_LDEXPL''@|1|g' \
+      -e 's|@''HAVE_DECL_LOGL''@|1|g' \
+      -e 's|@''HAVE_DECL_LOG10L''@|1|g' \
+      -e 's|@''HAVE_DECL_LOG2''@|1|g' \
+      -e 's|@''HAVE_DECL_LOG2F''@|1|g' \
+      -e 's|@''HAVE_DECL_LOG2L''@|1|g' \
+      -e 's|@''HAVE_DECL_LOGB''@|1|g' \
+      -e 's|@''HAVE_DECL_REMAINDER''@|1|g' \
+      -e 's|@''HAVE_DECL_REMAINDERL''@|1|g' \
+      -e 's|@''HAVE_DECL_RINTF''@|1|g' \
+      -e 's|@''HAVE_DECL_ROUND''@|1|g' \
+      -e 's|@''HAVE_DECL_ROUNDF''@|1|g' \
+      -e 's|@''HAVE_DECL_ROUNDL''@|1|g' \
+      -e 's|@''HAVE_DECL_SINL''@|1|g' \
+      -e 's|@''HAVE_DECL_SQRTL''@|1|g' \
+      -e 's|@''HAVE_DECL_TANL''@|1|g' \
+      -e 's|@''HAVE_DECL_TRUNC''@|1|g' \
+      -e 's|@''HAVE_DECL_TRUNCF''@|1|g' \
+      -e 's|@''HAVE_DECL_TRUNCL''@|1|g' \
+  | \
+  sed -e 's|@''REPLACE_ACOSF''@|0|g' \
+      -e 's|@''REPLACE_ASINF''@|0|g' \
+      -e 's|@''REPLACE_ATANF''@|0|g' \
+      -e 's|@''REPLACE_ATAN2F''@|0|g' \
+      -e 's|@''REPLACE_CBRTF''@|0|g' \
+      -e 's|@''REPLACE_CBRTL''@|0|g' \
+      -e 's|@''REPLACE_CEIL''@|0|g' \
+      -e 's|@''REPLACE_CEILF''@|0|g' \
+      -e 's|@''REPLACE_CEILL''@|0|g' \
+      -e 's|@''REPLACE_COSF''@|0|g' \
+      -e 's|@''REPLACE_COSHF''@|0|g' \
+      -e 's|@''REPLACE_EXPF''@|0|g' \
+      -e 's|@''REPLACE_EXPM1''@|0|g' \
+      -e 's|@''REPLACE_EXPM1F''@|0|g' \
+      -e 's|@''REPLACE_EXP2''@|0|g' \
+      -e 's|@''REPLACE_EXP2L''@|0|g' \
+      -e 's|@''REPLACE_FABSL''@|0|g' \
+      -e 's|@''REPLACE_FLOOR''@|0|g' \
+      -e 's|@''REPLACE_FLOORF''@|0|g' \
+      -e 's|@''REPLACE_FLOORL''@|0|g' \
+      -e 's|@''REPLACE_FMA''@|0|g' \
+      -e 's|@''REPLACE_FMAF''@|0|g' \
+      -e 's|@''REPLACE_FMAL''@|0|g' \
+      -e 's|@''REPLACE_FMOD''@|0|g' \
+      -e 's|@''REPLACE_FMODF''@|0|g' \
+      -e 's|@''REPLACE_FMODL''@|0|g' \
+      -e 's|@''REPLACE_FREXPF''@|0|g' \
+      -e 's|@''REPLACE_FREXP''@|0|g' \
+      -e 's|@''REPLACE_FREXPL''@|0|g' \
+      -e 's|@''REPLACE_HUGE_VAL''@|0|g' \
+      -e 's|@''REPLACE_HYPOT''@|0|g' \
+      -e 's|@''REPLACE_HYPOTF''@|0|g' \
+      -e 's|@''REPLACE_HYPOTL''@|0|g' \
+      -e 's|@''REPLACE_ILOGB''@|0|g' \
+      -e 's|@''REPLACE_ILOGBF''@|0|g' \
+      -e 's|@''REPLACE_ILOGBL''@|0|g' \
+      -e 's|@''REPLACE_ISFINITE''@|0|g' \
+      -e 's|@''REPLACE_ISINF''@|0|g' \
+      -e 's|@''REPLACE_ISNAN''@|0|g' \
+      -e 's|@''REPLACE_ITOLD''@|0|g' \
+      -e 's|@''REPLACE_LDEXPL''@|0|g' \
+      -e 's|@''REPLACE_LOG''@|0|g' \
+      -e 's|@''REPLACE_LOGF''@|0|g' \
+      -e 's|@''REPLACE_LOGL''@|0|g' \
+      -e 's|@''REPLACE_LOG10''@|0|g' \
+      -e 's|@''REPLACE_LOG10F''@|0|g' \
+      -e 's|@''REPLACE_LOG10L''@|0|g' \
+      -e 's|@''REPLACE_LOG1P''@|0|g' \
+      -e 's|@''REPLACE_LOG1PF''@|0|g' \
+      -e 's|@''REPLACE_LOG1PL''@|0|g' \
+      -e 's|@''REPLACE_LOG2''@|0|g' \
+      -e 's|@''REPLACE_LOG2F''@|0|g' \
+      -e 's|@''REPLACE_LOG2L''@|0|g' \
+      -e 's|@''REPLACE_LOGB''@|0|g' \
+      -e 's|@''REPLACE_LOGBF''@|0|g' \
+      -e 's|@''REPLACE_LOGBL''@|0|g' \
+      -e 's|@''REPLACE_MODF''@|0|g' \
+      -e 's|@''REPLACE_MODFF''@|0|g' \
+      -e 's|@''REPLACE_MODFL''@|0|g' \
+      -e 's|@''REPLACE_NAN''@|0|g' \
+      -e 's|@''REPLACE_REMAINDER''@|0|g' \
+      -e 's|@''REPLACE_REMAINDERF''@|0|g' \
+      -e 's|@''REPLACE_REMAINDERL''@|0|g' \
+      -e 's|@''REPLACE_ROUND''@|0|g' \
+      -e 's|@''REPLACE_ROUNDF''@|0|g' \
+      -e 's|@''REPLACE_ROUNDL''@|0|g' \
+      -e 's|@''REPLACE_SIGNBIT''@|0|g' \
+      -e 's|@''REPLACE_SIGNBIT_USING_GCC''@|1|g' \
+      -e 's|@''REPLACE_SINF''@|0|g' \
+      -e 's|@''REPLACE_SINHF''@|0|g' \
+      -e 's|@''REPLACE_SQRTF''@|0|g' \
+      -e 's|@''REPLACE_SQRTL''@|0|g' \
+      -e 's|@''REPLACE_TANF''@|0|g' \
+      -e 's|@''REPLACE_TANHF''@|0|g' \
+      -e 's|@''REPLACE_TRUNC''@|0|g' \
+      -e 's|@''REPLACE_TRUNCF''@|0|g' \
+      -e 's|@''REPLACE_TRUNCL''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h'; \
+} > lib/math.h-t && \
+mv lib/math.h-t lib/math.h
+rm -f lib/signal.h-t lib/signal.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SIGNAL_H''@|<signal.h>|g' \
+      -e 's/@''GNULIB_PTHREAD_SIGMASK''@/0/g' \
+      -e 's/@''GNULIB_RAISE''@/1/g' \
+      -e 's/@''GNULIB_SIGNAL_H_SIGPIPE''@/0/g' \
+      -e 's/@''GNULIB_SIGPROCMASK''@/1/g' \
+      -e 's/@''GNULIB_SIGACTION''@/1/g' \
+      -e 's|@''HAVE_POSIX_SIGNALBLOCKING''@|1|g' \
+      -e 's|@''HAVE_PTHREAD_SIGMASK''@|1|g' \
+      -e 's|@''HAVE_RAISE''@|1|g' \
+      -e 's|@''HAVE_SIGSET_T''@|1|g' \
+      -e 's|@''HAVE_SIGINFO_T''@|1|g' \
+      -e 's|@''HAVE_SIGACTION''@|1|g' \
+      -e 's|@''HAVE_STRUCT_SIGACTION_SA_SIGACTION''@|1|g' \
+      -e 's|@''HAVE_TYPE_VOLATILE_SIG_ATOMIC_T''@|1|g' \
+      -e 's|@''HAVE_SIGHANDLER_T''@|1|g' \
+      -e 's|@''REPLACE_PTHREAD_SIGMASK''@|0|g' \
+      -e 's|@''REPLACE_RAISE''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h' \
+      < ./lib/signal.in.h; \
+} > lib/signal.h-t && \
+mv lib/signal.h-t lib/signal.h
+rm -f lib/spawn.h-t lib/spawn.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''HAVE_SPAWN_H''@|1|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SPAWN_H''@|<spawn.h>|g' \
+      -e 's/@''GNULIB_POSIX_SPAWN''@/0/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNP''@/1/g' \
+      -e 's/@''GNULIB_POSIX_SPAWN_FILE_ACTIONS_INIT''@/1/g' \
+      -e 's/@''GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDCHDIR''@/0/g' \
+      -e 's/@''GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDCLOSE''@/1/g' \
+      -e 's/@''GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDDUP2''@/1/g' \
+      -e 's/@''GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDOPEN''@/1/g' \
+      -e 's/@''GNULIB_POSIX_SPAWN_FILE_ACTIONS_DESTROY''@/1/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_INIT''@/1/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_GETFLAGS''@/0/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_SETFLAGS''@/1/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_GETPGROUP''@/0/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_SETPGROUP''@/0/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_GETSCHEDPARAM''@/0/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_SETSCHEDPARAM''@/0/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_GETSCHEDPOLICY''@/0/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_SETSCHEDPOLICY''@/0/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_GETSIGDEFAULT''@/0/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_SETSIGDEFAULT''@/0/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_GETSIGMASK''@/0/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_SETSIGMASK''@/1/g' \
+      -e 's/@''GNULIB_POSIX_SPAWNATTR_DESTROY''@/1/g' \
+      -e 's|@''HAVE_POSIX_SPAWN''@|1|g' \
+      -e 's|@''HAVE_POSIX_SPAWNATTR_T''@|1|g' \
+      -e 's|@''HAVE_POSIX_SPAWN_FILE_ACTIONS_T''@|1|g' \
+      -e 's|@''HAVE_POSIX_SPAWN_FILE_ACTIONS_ADDCHDIR''@|1|g' \
+      -e 's|@''REPLACE_POSIX_SPAWN''@|0|g' \
+      -e 's|@''REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDCHDIR''@|0|g' \
+      -e 's|@''REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDCLOSE''@|0|g' \
+      -e 's|@''REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDDUP2''@|0|g' \
+      -e 's|@''REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDOPEN''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h' \
+      < ./lib/spawn.in.h; \
+} > lib/spawn.h-t && \
+mv lib/spawn.h-t lib/spawn.h
+rm -f lib/stdio.h-t lib/stdio.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_STDIO_H''@|<stdio.h>|g' \
+      -e 's/@''GNULIB_DPRINTF''@/0/g' \
+      -e 's/@''GNULIB_FCLOSE''@/0/g' \
+      -e 's/@''GNULIB_FDOPEN''@/0/g' \
+      -e 's/@''GNULIB_FFLUSH''@/0/g' \
+      -e 's/@''GNULIB_FGETC''@/1/g' \
+      -e 's/@''GNULIB_FGETS''@/1/g' \
+      -e 's/@''GNULIB_FOPEN''@/1/g' \
+      -e 's/@''GNULIB_FPRINTF''@/1/g' \
+      -e 's/@''GNULIB_FPRINTF_POSIX''@/1/g' \
+      -e 's/@''GNULIB_FPURGE''@/0/g' \
+      -e 's/@''GNULIB_FPUTC''@/1/g' \
+      -e 's/@''GNULIB_FPUTS''@/1/g' \
+      -e 's/@''GNULIB_FREAD''@/1/g' \
+      -e 's/@''GNULIB_FREOPEN''@/0/g' \
+      -e 's/@''GNULIB_FSCANF''@/1/g' \
+      -e 's/@''GNULIB_FSEEK''@/0/g' \
+      -e 's/@''GNULIB_FSEEKO''@/0/g' \
+      -e 's/@''GNULIB_FTELL''@/0/g' \
+      -e 's/@''GNULIB_FTELLO''@/0/g' \
+      -e 's/@''GNULIB_FWRITE''@/1/g' \
+      -e 's/@''GNULIB_GETC''@/1/g' \
+      -e 's/@''GNULIB_GETCHAR''@/1/g' \
+      -e 's/@''GNULIB_GETDELIM''@/0/g' \
+      -e 's/@''GNULIB_GETLINE''@/0/g' \
+      -e 's/@''GNULIB_OBSTACK_PRINTF''@/1/g' \
+      -e 's/@''GNULIB_OBSTACK_PRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_PCLOSE''@/0/g' \
+      -e 's/@''GNULIB_PERROR''@/1/g' \
+      -e 's/@''GNULIB_POPEN''@/0/g' \
+      -e 's/@''GNULIB_PRINTF''@/1/g' \
+      -e 's/@''GNULIB_PRINTF_POSIX''@/1/g' \
+      -e 's/@''GNULIB_PUTC''@/1/g' \
+      -e 's/@''GNULIB_PUTCHAR''@/1/g' \
+      -e 's/@''GNULIB_PUTS''@/1/g' \
+      -e 's/@''GNULIB_REMOVE''@/0/g' \
+      -e 's/@''GNULIB_RENAME''@/0/g' \
+      -e 's/@''GNULIB_RENAMEAT''@/0/g' \
+      -e 's/@''GNULIB_SCANF''@/1/g' \
+      -e 's/@''GNULIB_SNPRINTF''@/1/g' \
+      -e 's/@''GNULIB_SPRINTF_POSIX''@/1/g' \
+      -e 's/@''GNULIB_STDIO_H_NONBLOCKING''@/0/g' \
+      -e 's/@''GNULIB_STDIO_H_SIGPIPE''@/0/g' \
+      -e 's/@''GNULIB_TMPFILE''@/0/g' \
+      -e 's/@''GNULIB_VASPRINTF''@/0/g' \
+      -e 's/@''GNULIB_VDPRINTF''@/0/g' \
+      -e 's/@''GNULIB_VFPRINTF''@/1/g' \
+      -e 's/@''GNULIB_VFPRINTF_POSIX''@/1/g' \
+      -e 's/@''GNULIB_VFSCANF''@/0/g' \
+      -e 's/@''GNULIB_VSCANF''@/0/g' \
+      -e 's/@''GNULIB_VPRINTF''@/1/g' \
+      -e 's/@''GNULIB_VPRINTF_POSIX''@/0/g' \
+      -e 's/@''GNULIB_VSNPRINTF''@/1/g' \
+      -e 's/@''GNULIB_VSPRINTF_POSIX''@/1/g' \
+      < ./lib/stdio.in.h | \
+  sed -e 's|@''HAVE_DECL_FPURGE''@|1|g' \
+      -e 's|@''HAVE_DECL_FSEEKO''@|1|g' \
+      -e 's|@''HAVE_DECL_FTELLO''@|1|g' \
+      -e 's|@''HAVE_DECL_GETDELIM''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLINE''@|1|g' \
+      -e 's|@''HAVE_DECL_OBSTACK_PRINTF''@|1|g' \
+      -e 's|@''HAVE_DECL_SNPRINTF''@|1|g' \
+      -e 's|@''HAVE_DECL_VSNPRINTF''@|1|g' \
+      -e 's|@''HAVE_DPRINTF''@|1|g' \
+      -e 's|@''HAVE_FSEEKO''@|1|g' \
+      -e 's|@''HAVE_FTELLO''@|1|g' \
+      -e 's|@''HAVE_PCLOSE''@|1|g' \
+      -e 's|@''HAVE_POPEN''@|1|g' \
+      -e 's|@''HAVE_RENAMEAT''@|1|g' \
+      -e 's|@''HAVE_VASPRINTF''@|1|g' \
+      -e 's|@''HAVE_VDPRINTF''@|1|g' \
+      -e 's|@''REPLACE_DPRINTF''@|0|g' \
+      -e 's|@''REPLACE_FCLOSE''@|0|g' \
+      -e 's|@''REPLACE_FDOPEN''@|0|g' \
+      -e 's|@''REPLACE_FFLUSH''@|0|g' \
+      -e 's|@''REPLACE_FOPEN''@|0|g' \
+      -e 's|@''REPLACE_FPRINTF''@|1|g' \
+      -e 's|@''REPLACE_FPURGE''@|0|g' \
+      -e 's|@''REPLACE_FREOPEN''@|0|g' \
+      -e 's|@''REPLACE_FSEEK''@|0|g' \
+      -e 's|@''REPLACE_FSEEKO''@|0|g' \
+      -e 's|@''REPLACE_FTELL''@|0|g' \
+      -e 's|@''REPLACE_FTELLO''@|0|g' \
+      -e 's|@''REPLACE_GETDELIM''@|0|g' \
+      -e 's|@''REPLACE_GETLINE''@|0|g' \
+      -e 's|@''REPLACE_OBSTACK_PRINTF''@|0|g' \
+      -e 's|@''REPLACE_PERROR''@|1|g' \
+      -e 's|@''REPLACE_POPEN''@|0|g' \
+      -e 's|@''REPLACE_PRINTF''@|1|g' \
+      -e 's|@''REPLACE_REMOVE''@|0|g' \
+      -e 's|@''REPLACE_RENAME''@|0|g' \
+      -e 's|@''REPLACE_RENAMEAT''@|0|g' \
+      -e 's|@''REPLACE_SNPRINTF''@|1|g' \
+      -e 's|@''REPLACE_SPRINTF''@|1|g' \
+      -e 's|@''REPLACE_STDIO_READ_FUNCS''@|0|g' \
+      -e 's|@''REPLACE_STDIO_WRITE_FUNCS''@|0|g' \
+      -e 's|@''REPLACE_TMPFILE''@|0|g' \
+      -e 's|@''REPLACE_VASPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VDPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VFPRINTF''@|1|g' \
+      -e 's|@''REPLACE_VPRINTF''@|0|g' \
+      -e 's|@''REPLACE_VSNPRINTF''@|1|g' \
+      -e 's|@''REPLACE_VSPRINTF''@|1|g' \
+      -e 's|@''ASM_SYMBOL_PREFIX''@|""|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h'; \
+} > lib/stdio.h-t && \
+mv lib/stdio.h-t lib/stdio.h
+rm -f lib/stdlib.h-t lib/stdlib.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_STDLIB_H''@|<stdlib.h>|g' \
+      -e 's/@''GNULIB__EXIT''@/0/g' \
+      -e 's/@''GNULIB_ATOLL''@/0/g' \
+      -e 's/@''GNULIB_CALLOC_POSIX''@/1/g' \
+      -e 's/@''GNULIB_CANONICALIZE_FILE_NAME''@/0/g' \
+      -e 's/@''GNULIB_GETLOADAVG''@/0/g' \
+      -e 's/@''GNULIB_GETSUBOPT''@/0/g' \
+      -e 's/@''GNULIB_GRANTPT''@/0/g' \
+      -e 's/@''GNULIB_MALLOC_POSIX''@/1/g' \
+      -e 's/@''GNULIB_MBTOWC''@/0/g' \
+      -e 's/@''GNULIB_MKDTEMP''@/0/g' \
+      -e 's/@''GNULIB_MKOSTEMP''@/0/g' \
+      -e 's/@''GNULIB_MKOSTEMPS''@/0/g' \
+      -e 's/@''GNULIB_MKSTEMP''@/0/g' \
+      -e 's/@''GNULIB_MKSTEMPS''@/0/g' \
+      -e 's/@''GNULIB_POSIX_OPENPT''@/0/g' \
+      -e 's/@''GNULIB_PTSNAME''@/0/g' \
+      -e 's/@''GNULIB_PTSNAME_R''@/0/g' \
+      -e 's/@''GNULIB_PUTENV''@/0/g' \
+      -e 's/@''GNULIB_QSORT_R''@/0/g' \
+      -e 's/@''GNULIB_RANDOM''@/0/g' \
+      -e 's/@''GNULIB_RANDOM_R''@/0/g' \
+      -e 's/@''GNULIB_REALLOC_POSIX''@/1/g' \
+      -e 's/@''GNULIB_REALLOCARRAY''@/0/g' \
+      -e 's/@''GNULIB_REALPATH''@/0/g' \
+      -e 's/@''GNULIB_RPMATCH''@/0/g' \
+      -e 's/@''GNULIB_SECURE_GETENV''@/0/g' \
+      -e 's/@''GNULIB_SETENV''@/0/g' \
+      -e 's/@''GNULIB_STRTOD''@/0/g' \
+      -e 's/@''GNULIB_STRTOLL''@/0/g' \
+      -e 's/@''GNULIB_STRTOULL''@/0/g' \
+      -e 's/@''GNULIB_SYSTEM_POSIX''@/0/g' \
+      -e 's/@''GNULIB_UNLOCKPT''@/0/g' \
+      -e 's/@''GNULIB_UNSETENV''@/1/g' \
+      -e 's/@''GNULIB_WCTOMB''@/0/g' \
+      < ./lib/stdlib.in.h | \
+  sed -e 's|@''HAVE__EXIT''@|1|g' \
+      -e 's|@''HAVE_ATOLL''@|1|g' \
+      -e 's|@''HAVE_CANONICALIZE_FILE_NAME''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLOADAVG''@|1|g' \
+      -e 's|@''HAVE_GETSUBOPT''@|1|g' \
+      -e 's|@''HAVE_GRANTPT''@|1|g' \
+      -e 's|@''HAVE_DECL_INITSTATE''@|1|g' \
+      -e 's|@''HAVE_MKDTEMP''@|1|g' \
+      -e 's|@''HAVE_MKOSTEMP''@|1|g' \
+      -e 's|@''HAVE_MKOSTEMPS''@|1|g' \
+      -e 's|@''HAVE_MKSTEMP''@|1|g' \
+      -e 's|@''HAVE_MKSTEMPS''@|1|g' \
+      -e 's|@''HAVE_POSIX_OPENPT''@|1|g' \
+      -e 's|@''HAVE_PTSNAME''@|1|g' \
+      -e 's|@''HAVE_PTSNAME_R''@|1|g' \
+      -e 's|@''HAVE_QSORT_R''@|1|g' \
+      -e 's|@''HAVE_RANDOM''@|1|g' \
+      -e 's|@''HAVE_RANDOM_H''@|1|g' \
+      -e 's|@''HAVE_RANDOM_R''@|1|g' \
+      -e 's|@''HAVE_REALLOCARRAY''@|1|g' \
+      -e 's|@''HAVE_REALPATH''@|1|g' \
+      -e 's|@''HAVE_RPMATCH''@|1|g' \
+      -e 's|@''HAVE_SECURE_GETENV''@|1|g' \
+      -e 's|@''HAVE_DECL_SETENV''@|1|g' \
+      -e 's|@''HAVE_DECL_SETSTATE''@|1|g' \
+      -e 's|@''HAVE_STRTOD''@|1|g' \
+      -e 's|@''HAVE_STRTOLL''@|1|g' \
+      -e 's|@''HAVE_STRTOULL''@|1|g' \
+      -e 's|@''HAVE_STRUCT_RANDOM_DATA''@|1|g' \
+      -e 's|@''HAVE_SYS_LOADAVG_H''@|0|g' \
+      -e 's|@''HAVE_UNLOCKPT''@|1|g' \
+      -e 's|@''HAVE_DECL_UNSETENV''@|1|g' \
+      -e 's|@''REPLACE_CALLOC''@|0|g' \
+      -e 's|@''REPLACE_CANONICALIZE_FILE_NAME''@|0|g' \
+      -e 's|@''REPLACE_MALLOC''@|0|g' \
+      -e 's|@''REPLACE_MBTOWC''@|0|g' \
+      -e 's|@''REPLACE_MKSTEMP''@|0|g' \
+      -e 's|@''REPLACE_PTSNAME''@|0|g' \
+      -e 's|@''REPLACE_PTSNAME_R''@|0|g' \
+      -e 's|@''REPLACE_PUTENV''@|0|g' \
+      -e 's|@''REPLACE_QSORT_R''@|0|g' \
+      -e 's|@''REPLACE_RANDOM_R''@|0|g' \
+      -e 's|@''REPLACE_REALLOC''@|0|g' \
+      -e 's|@''REPLACE_REALPATH''@|0|g' \
+      -e 's|@''REPLACE_SETENV''@|0|g' \
+      -e 's|@''REPLACE_STRTOD''@|0|g' \
+      -e 's|@''REPLACE_UNSETENV''@|0|g' \
+      -e 's|@''REPLACE_WCTOMB''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _Noreturn/r ./lib/_Noreturn.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h'; \
+} > lib/stdlib.h-t && \
+mv lib/stdlib.h-t lib/stdlib.h
+rm -f lib/string.h-t lib/string.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_STRING_H''@|<string.h>|g' \
+      -e 's/@''GNULIB_EXPLICIT_BZERO''@/0/g' \
+      -e 's/@''GNULIB_FFSL''@/0/g' \
+      -e 's/@''GNULIB_FFSLL''@/0/g' \
+      -e 's/@''GNULIB_MBSLEN''@/0/g' \
+      -e 's/@''GNULIB_MBSNLEN''@/0/g' \
+      -e 's/@''GNULIB_MBSCHR''@/0/g' \
+      -e 's/@''GNULIB_MBSRCHR''@/0/g' \
+      -e 's/@''GNULIB_MBSSTR''@/0/g' \
+      -e 's/@''GNULIB_MBSCASECMP''@/0/g' \
+      -e 's/@''GNULIB_MBSNCASECMP''@/0/g' \
+      -e 's/@''GNULIB_MBSPCASECMP''@/0/g' \
+      -e 's/@''GNULIB_MBSCASESTR''@/0/g' \
+      -e 's/@''GNULIB_MBSCSPN''@/0/g' \
+      -e 's/@''GNULIB_MBSPBRK''@/0/g' \
+      -e 's/@''GNULIB_MBSSPN''@/0/g' \
+      -e 's/@''GNULIB_MBSSEP''@/0/g' \
+      -e 's/@''GNULIB_MBSTOK_R''@/0/g' \
+      -e 's/@''GNULIB_MEMCHR''@/1/g' \
+      -e 's/@''GNULIB_MEMMEM''@/0/g' \
+      -e 's/@''GNULIB_MEMPCPY''@/0/g' \
+      -e 's/@''GNULIB_MEMRCHR''@/0/g' \
+      -e 's/@''GNULIB_RAWMEMCHR''@/1/g' \
+      -e 's/@''GNULIB_STPCPY''@/1/g' \
+      -e 's/@''GNULIB_STPNCPY''@/0/g' \
+      -e 's/@''GNULIB_STRCHRNUL''@/1/g' \
+      -e 's/@''GNULIB_STRDUP''@/1/g' \
+      -e 's/@''GNULIB_STRNCAT''@/0/g' \
+      -e 's/@''GNULIB_STRNDUP''@/1/g' \
+      -e 's/@''GNULIB_STRNLEN''@/1/g' \
+      -e 's/@''GNULIB_STRPBRK''@/0/g' \
+      -e 's/@''GNULIB_STRSEP''@/0/g' \
+      -e 's/@''GNULIB_STRSTR''@/0/g' \
+      -e 's/@''GNULIB_STRCASESTR''@/0/g' \
+      -e 's/@''GNULIB_STRTOK_R''@/0/g' \
+      -e 's/@''GNULIB_STRERROR''@/1/g' \
+      -e 's/@''GNULIB_STRERROR_R''@/1/g' \
+      -e 's/@''GNULIB_STRSIGNAL''@/0/g' \
+      -e 's/@''GNULIB_STRVERSCMP''@/1/g' \
+      < ./lib/string.in.h | \
+  sed -e 's|@''HAVE_EXPLICIT_BZERO''@|1|g' \
+      -e 's|@''HAVE_FFSL''@|1|g' \
+      -e 's|@''HAVE_FFSLL''@|1|g' \
+      -e 's|@''HAVE_MBSLEN''@|0|g' \
+      -e 's|@''HAVE_MEMCHR''@|1|g' \
+      -e 's|@''HAVE_DECL_MEMMEM''@|1|g' \
+      -e 's|@''HAVE_MEMPCPY''@|1|g' \
+      -e 's|@''HAVE_DECL_MEMRCHR''@|1|g' \
+      -e 's|@''HAVE_RAWMEMCHR''@|1|g' \
+      -e 's|@''HAVE_STPCPY''@|1|g' \
+      -e 's|@''HAVE_STPNCPY''@|1|g' \
+      -e 's|@''HAVE_STRCHRNUL''@|1|g' \
+      -e 's|@''HAVE_DECL_STRDUP''@|1|g' \
+      -e 's|@''HAVE_DECL_STRNDUP''@|1|g' \
+      -e 's|@''HAVE_DECL_STRNLEN''@|1|g' \
+      -e 's|@''HAVE_STRPBRK''@|1|g' \
+      -e 's|@''HAVE_STRSEP''@|1|g' \
+      -e 's|@''HAVE_STRCASESTR''@|1|g' \
+      -e 's|@''HAVE_DECL_STRTOK_R''@|1|g' \
+      -e 's|@''HAVE_DECL_STRERROR_R''@|1|g' \
+      -e 's|@''HAVE_DECL_STRSIGNAL''@|1|g' \
+      -e 's|@''HAVE_STRVERSCMP''@|1|g' \
+      -e 's|@''REPLACE_MEMCHR''@|0|g' \
+      -e 's|@''REPLACE_MEMMEM''@|0|g' \
+      -e 's|@''REPLACE_STPNCPY''@|0|g' \
+      -e 's|@''REPLACE_STRCHRNUL''@|0|g' \
+      -e 's|@''REPLACE_STRDUP''@|0|g' \
+      -e 's|@''REPLACE_STRNCAT''@|0|g' \
+      -e 's|@''REPLACE_STRNDUP''@|0|g' \
+      -e 's|@''REPLACE_STRNLEN''@|0|g' \
+      -e 's|@''REPLACE_STRSTR''@|0|g' \
+      -e 's|@''REPLACE_STRCASESTR''@|0|g' \
+      -e 's|@''REPLACE_STRTOK_R''@|0|g' \
+      -e 's|@''REPLACE_STRERROR''@|1|g' \
+      -e 's|@''REPLACE_STRERROR_R''@|1|g' \
+      -e 's|@''REPLACE_STRSIGNAL''@|0|g' \
+      -e 's|@''UNDEFINE_STRTOK_R''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h'; \
+      < ./lib/string.in.h; \
+} > lib/string.h-t && \
+mv lib/string.h-t lib/string.h
+/bin/mkdir -p lib/sys
+rm -f lib/sys/resource.h-t lib/sys/resource.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_RESOURCE_H''@|<sys/resource.h>|g' \
+      -e 's|@''HAVE_SYS_RESOURCE_H''@|1|g' \
+      -e 's/@''GNULIB_GETRUSAGE''@/1/g' \
+      -e 's/@''HAVE_GETRUSAGE''@/1/g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h' \
+      < ./lib/sys_resource.in.h; \
+} > lib/sys/resource.h-t && \
+mv -f lib/sys/resource.h-t lib/sys/resource.h
+/bin/mkdir -p lib/sys
+/bin/mkdir -p lib/sys
+rm -f lib/sys/stat.h-t lib/sys/stat.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_STAT_H''@|<sys/stat.h>|g' \
+      -e 's|@''WINDOWS_64_BIT_ST_SIZE''@|0|g' \
+      -e 's|@''WINDOWS_STAT_TIMESPEC''@|0|g' \
+      -e 's/@''GNULIB_FCHMODAT''@/0/g' \
+      -e 's/@''GNULIB_FSTAT''@/1/g' \
+      -e 's/@''GNULIB_FSTATAT''@/0/g' \
+      -e 's/@''GNULIB_FUTIMENS''@/0/g' \
+      -e 's/@''GNULIB_LCHMOD''@/0/g' \
+      -e 's/@''GNULIB_LSTAT''@/1/g' \
+      -e 's/@''GNULIB_MKDIRAT''@/0/g' \
+      -e 's/@''GNULIB_MKFIFO''@/0/g' \
+      -e 's/@''GNULIB_MKFIFOAT''@/0/g' \
+      -e 's/@''GNULIB_MKNOD''@/0/g' \
+      -e 's/@''GNULIB_MKNODAT''@/0/g' \
+      -e 's/@''GNULIB_STAT''@/1/g' \
+      -e 's/@''GNULIB_UTIMENSAT''@/0/g' \
+      -e 's/@''GNULIB_OVERRIDES_STRUCT_STAT''@/0/g' \
+      -e 's|@''HAVE_FCHMODAT''@|1|g' \
+      -e 's|@''HAVE_FSTATAT''@|1|g' \
+      -e 's|@''HAVE_FUTIMENS''@|1|g' \
+      -e 's|@''HAVE_LCHMOD''@|1|g' \
+      -e 's|@''HAVE_LSTAT''@|1|g' \
+      -e 's|@''HAVE_MKDIRAT''@|1|g' \
+      -e 's|@''HAVE_MKFIFO''@|1|g' \
+      -e 's|@''HAVE_MKFIFOAT''@|1|g' \
+      -e 's|@''HAVE_MKNOD''@|1|g' \
+      -e 's|@''HAVE_MKNODAT''@|1|g' \
+      -e 's|@''HAVE_UTIMENSAT''@|1|g' \
+      -e 's|@''REPLACE_FSTAT''@|0|g' \
+      -e 's|@''REPLACE_FSTATAT''@|0|g' \
+      -e 's|@''REPLACE_FUTIMENS''@|0|g' \
+      -e 's|@''REPLACE_LSTAT''@|0|g' \
+      -e 's|@''REPLACE_MKDIR''@|0|g' \
+      -e 's|@''REPLACE_MKFIFO''@|0|g' \
+      -e 's|@''REPLACE_MKNOD''@|0|g' \
+      -e 's|@''REPLACE_STAT''@|0|g' \
+      -e 's|@''REPLACE_UTIMENSAT''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h' \
+      < ./lib/sys_stat.in.h; \
+} > lib/sys/stat.h-t && \
+mv lib/sys/stat.h-t lib/sys/stat.h
+rm -f lib/sys/time.h-t lib/sys/time.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's/@''HAVE_SYS_TIME_H''@/1/g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_TIME_H''@|<sys/time.h>|g' \
+      -e 's/@''GNULIB_GETTIMEOFDAY''@/1/g' \
+      -e 's|@''HAVE_WINSOCK2_H''@|0|g' \
+      -e 's/@''HAVE_GETTIMEOFDAY''@/1/g' \
+      -e 's/@''HAVE_STRUCT_TIMEVAL''@/1/g' \
+      -e 's/@''REPLACE_GETTIMEOFDAY''@/0/g' \
+      -e 's/@''REPLACE_STRUCT_TIMEVAL''@/0/g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h' \
+      < ./lib/sys_time.in.h; \
+} > lib/sys/time.h-t && \
+mv lib/sys/time.h-t lib/sys/time.h
+/bin/mkdir -p lib/sys
+/bin/mkdir -p lib/sys
+rm -f lib/sys/times.h-t lib/sys/times.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's/@''HAVE_SYS_TIMES_H''@/1/g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_TIMES_H''@|<sys/times.h>|g' \
+      -e 's/@''GNULIB_TIMES''@/0/g' \
+      -e 's|@''HAVE_STRUCT_TMS''@|1|g' \
+      -e 's|@''HAVE_TIMES''@|1|g' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h' \
+      < ./lib/sys_times.in.h; \
+} > lib/sys/times.h-t && \
+mv lib/sys/times.h-t lib/sys/times.h
+/bin/mkdir -p lib/sys
+rm -f lib/time.h-t lib/time.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */' && \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_TIME_H''@|<time.h>|g' \
+      -e 's/@''GNULIB_CTIME''@/0/g' \
+      -e 's/@''GNULIB_LOCALTIME''@/0/g' \
+      -e 's/@''GNULIB_MKTIME''@/0/g' \
+      -e 's/@''GNULIB_NANOSLEEP''@/0/g' \
+      -e 's/@''GNULIB_STRFTIME''@/0/g' \
+      -e 's/@''GNULIB_STRPTIME''@/0/g' \
+      -e 's/@''GNULIB_TIMEGM''@/0/g' \
+      -e 's/@''GNULIB_TIME_R''@/0/g' \
+      -e 's/@''GNULIB_TIME_RZ''@/0/g' \
+      -e 's/@''GNULIB_TZSET''@/0/g' \
+      -e 's|@''HAVE_DECL_LOCALTIME_R''@|1|g' \
+      -e 's|@''HAVE_NANOSLEEP''@|1|g' \
+      -e 's|@''HAVE_STRPTIME''@|1|g' \
+      -e 's|@''HAVE_TIMEGM''@|1|g' \
+      -e 's|@''HAVE_TIMEZONE_T''@|0|g' \
+      -e 's|@''HAVE_TZSET''@|1|g' \
+      -e 's|@''REPLACE_CTIME''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_GMTIME''@|0|g' \
+      -e 's|@''REPLACE_LOCALTIME''@|0|g' \
+      -e 's|@''REPLACE_LOCALTIME_R''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_MKTIME''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_NANOSLEEP''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_STRFTIME''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_TIMEGM''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''REPLACE_TZSET''@|GNULIB_PORTCHECK|g' \
+      -e 's|@''PTHREAD_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+      -e 's|@''SYS_TIME_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+      -e 's|@''TIME_H_DEFINES_STRUCT_TIMESPEC''@|1|g' \
+      -e 's|@''UNISTD_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h' \
+      < ./lib/time.in.h; \
+} > lib/time.h-t && \
+mv lib/time.h-t lib/time.h
+rm -f lib/sys/types.h-t lib/sys/types.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_TYPES_H''@|<sys/types.h>|g' \
+      -e 's|@''WINDOWS_64_BIT_OFF_T''@|0|g' \
+      -e 's|@''WINDOWS_STAT_INODES''@|0|g' \
+      < ./lib/sys_types.in.h; \
+} > lib/sys/types.h-t && \
+mv lib/sys/types.h-t lib/sys/types.h
+rm -f lib/sys/wait.h-t lib/sys/wait.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_WAIT_H''@|<sys/wait.h>|g' \
+      -e 's/@''GNULIB_WAITPID''@/1/g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h' \
+      < ./lib/sys_wait.in.h; \
+} > lib/sys/wait.h-t && \
+mv lib/sys/wait.h-t lib/sys/wait.h
+rm -f lib/unistd.h-t lib/unistd.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''HAVE_UNISTD_H''@|1|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_UNISTD_H''@|<unistd.h>|g' \
+      -e 's|@''WINDOWS_64_BIT_OFF_T''@|0|g' \
+      -e 's/@''GNULIB_CHDIR''@/0/g' \
+      -e 's/@''GNULIB_CHOWN''@/0/g' \
+      -e 's/@''GNULIB_CLOSE''@/1/g' \
+      -e 's/@''GNULIB_DUP''@/0/g' \
+      -e 's/@''GNULIB_DUP2''@/1/g' \
+      -e 's/@''GNULIB_DUP3''@/0/g' \
+      -e 's/@''GNULIB_ENVIRON''@/1/g' \
+      -e 's/@''GNULIB_EUIDACCESS''@/0/g' \
+      -e 's/@''GNULIB_FACCESSAT''@/0/g' \
+      -e 's/@''GNULIB_FCHDIR''@/0/g' \
+      -e 's/@''GNULIB_FCHOWNAT''@/0/g' \
+      -e 's/@''GNULIB_FDATASYNC''@/0/g' \
+      -e 's/@''GNULIB_FSYNC''@/0/g' \
+      -e 's/@''GNULIB_FTRUNCATE''@/0/g' \
+      -e 's/@''GNULIB_GETCWD''@/0/g' \
+      -e 's/@''GNULIB_GETDOMAINNAME''@/0/g' \
+      -e 's/@''GNULIB_GETDTABLESIZE''@/1/g' \
+      -e 's/@''GNULIB_GETGROUPS''@/0/g' \
+      -e 's/@''GNULIB_GETHOSTNAME''@/0/g' \
+      -e 's/@''GNULIB_GETLOGIN''@/0/g' \
+      -e 's/@''GNULIB_GETLOGIN_R''@/0/g' \
+      -e 's/@''GNULIB_GETPAGESIZE''@/0/g' \
+      -e 's/@''GNULIB_GETPASS''@/0/g' \
+      -e 's/@''GNULIB_GETUSERSHELL''@/0/g' \
+      -e 's/@''GNULIB_GROUP_MEMBER''@/0/g' \
+      -e 's/@''GNULIB_ISATTY''@/0/g' \
+      -e 's/@''GNULIB_LCHOWN''@/0/g' \
+      -e 's/@''GNULIB_LINK''@/0/g' \
+      -e 's/@''GNULIB_LINKAT''@/0/g' \
+      -e 's/@''GNULIB_LSEEK''@/0/g' \
+      -e 's/@''GNULIB_PIPE''@/0/g' \
+      -e 's/@''GNULIB_PIPE2''@/1/g' \
+      -e 's/@''GNULIB_PREAD''@/0/g' \
+      -e 's/@''GNULIB_PWRITE''@/0/g' \
+      -e 's/@''GNULIB_READ''@/0/g' \
+      -e 's/@''GNULIB_READLINK''@/0/g' \
+      -e 's/@''GNULIB_READLINKAT''@/0/g' \
+      -e 's/@''GNULIB_RMDIR''@/0/g' \
+      -e 's/@''GNULIB_SETHOSTNAME''@/0/g' \
+      -e 's/@''GNULIB_SLEEP''@/0/g' \
+      -e 's/@''GNULIB_SYMLINK''@/0/g' \
+      -e 's/@''GNULIB_SYMLINKAT''@/0/g' \
+      -e 's/@''GNULIB_TRUNCATE''@/0/g' \
+      -e 's/@''GNULIB_TTYNAME_R''@/0/g' \
+      -e 's/@''GNULIB_UNISTD_H_GETOPT''@/0/g' \
+      -e 's/@''GNULIB_UNISTD_H_NONBLOCKING''@/0/g' \
+      -e 's/@''GNULIB_UNISTD_H_SIGPIPE''@/0/g' \
+      -e 's/@''GNULIB_UNLINK''@/1/g' \
+      -e 's/@''GNULIB_UNLINKAT''@/0/g' \
+      -e 's/@''GNULIB_USLEEP''@/0/g' \
+      -e 's/@''GNULIB_WRITE''@/0/g' \
+      < ./lib/unistd.in.h | \
+  sed -e 's|@''HAVE_CHOWN''@|1|g' \
+      -e 's|@''HAVE_DUP2''@|1|g' \
+      -e 's|@''HAVE_DUP3''@|1|g' \
+      -e 's|@''HAVE_EUIDACCESS''@|1|g' \
+      -e 's|@''HAVE_FACCESSAT''@|1|g' \
+      -e 's|@''HAVE_FCHDIR''@|1|g' \
+      -e 's|@''HAVE_FCHOWNAT''@|1|g' \
+      -e 's|@''HAVE_FDATASYNC''@|1|g' \
+      -e 's|@''HAVE_FSYNC''@|1|g' \
+      -e 's|@''HAVE_FTRUNCATE''@|1|g' \
+      -e 's|@''HAVE_GETDTABLESIZE''@|1|g' \
+      -e 's|@''HAVE_GETGROUPS''@|1|g' \
+      -e 's|@''HAVE_GETHOSTNAME''@|1|g' \
+      -e 's|@''HAVE_GETPAGESIZE''@|1|g' \
+      -e 's|@''HAVE_GETPASS''@|1|g' \
+      -e 's|@''HAVE_GROUP_MEMBER''@|1|g' \
+      -e 's|@''HAVE_LCHOWN''@|1|g' \
+      -e 's|@''HAVE_LINK''@|1|g' \
+      -e 's|@''HAVE_LINKAT''@|1|g' \
+      -e 's|@''HAVE_PIPE''@|1|g' \
+      -e 's|@''HAVE_PIPE2''@|1|g' \
+      -e 's|@''HAVE_PREAD''@|1|g' \
+      -e 's|@''HAVE_PWRITE''@|1|g' \
+      -e 's|@''HAVE_READLINK''@|1|g' \
+      -e 's|@''HAVE_READLINKAT''@|1|g' \
+      -e 's|@''HAVE_SETHOSTNAME''@|1|g' \
+      -e 's|@''HAVE_SLEEP''@|1|g' \
+      -e 's|@''HAVE_SYMLINK''@|1|g' \
+      -e 's|@''HAVE_SYMLINKAT''@|1|g' \
+      -e 's|@''HAVE_UNLINKAT''@|1|g' \
+      -e 's|@''HAVE_USLEEP''@|1|g' \
+      -e 's|@''HAVE_DECL_ENVIRON''@|1|g' \
+      -e 's|@''HAVE_DECL_FCHDIR''@|1|g' \
+      -e 's|@''HAVE_DECL_FDATASYNC''@|1|g' \
+      -e 's|@''HAVE_DECL_GETDOMAINNAME''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLOGIN''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLOGIN_R''@|1|g' \
+      -e 's|@''HAVE_DECL_GETPAGESIZE''@|1|g' \
+      -e 's|@''HAVE_DECL_GETUSERSHELL''@|1|g' \
+      -e 's|@''HAVE_DECL_SETHOSTNAME''@|1|g' \
+      -e 's|@''HAVE_DECL_TRUNCATE''@|1|g' \
+      -e 's|@''HAVE_DECL_TTYNAME_R''@|1|g' \
+      -e 's|@''HAVE_OS_H''@|0|g' \
+      -e 's|@''HAVE_SYS_PARAM_H''@|0|g' \
+  | \
+  sed -e 's|@''REPLACE_CHOWN''@|0|g' \
+      -e 's|@''REPLACE_CLOSE''@|0|g' \
+      -e 's|@''REPLACE_DUP''@|0|g' \
+      -e 's|@''REPLACE_DUP2''@|0|g' \
+      -e 's|@''REPLACE_FACCESSAT''@|0|g' \
+      -e 's|@''REPLACE_FCHOWNAT''@|0|g' \
+      -e 's|@''REPLACE_FTRUNCATE''@|0|g' \
+      -e 's|@''REPLACE_GETCWD''@|0|g' \
+      -e 's|@''REPLACE_GETDOMAINNAME''@|0|g' \
+      -e 's|@''REPLACE_GETDTABLESIZE''@|0|g' \
+      -e 's|@''REPLACE_GETLOGIN_R''@|0|g' \
+      -e 's|@''REPLACE_GETGROUPS''@|0|g' \
+      -e 's|@''REPLACE_GETPAGESIZE''@|0|g' \
+      -e 's|@''REPLACE_GETPASS''@|0|g' \
+      -e 's|@''REPLACE_ISATTY''@|0|g' \
+      -e 's|@''REPLACE_LCHOWN''@|0|g' \
+      -e 's|@''REPLACE_LINK''@|0|g' \
+      -e 's|@''REPLACE_LINKAT''@|0|g' \
+      -e 's|@''REPLACE_LSEEK''@|0|g' \
+      -e 's|@''REPLACE_PREAD''@|0|g' \
+      -e 's|@''REPLACE_PWRITE''@|0|g' \
+      -e 's|@''REPLACE_READ''@|0|g' \
+      -e 's|@''REPLACE_READLINK''@|0|g' \
+      -e 's|@''REPLACE_READLINKAT''@|0|g' \
+      -e 's|@''REPLACE_RMDIR''@|0|g' \
+      -e 's|@''REPLACE_SLEEP''@|0|g' \
+      -e 's|@''REPLACE_SYMLINK''@|0|g' \
+      -e 's|@''REPLACE_SYMLINKAT''@|0|g' \
+      -e 's|@''REPLACE_TRUNCATE''@|0|g' \
+      -e 's|@''REPLACE_TTYNAME_R''@|0|g' \
+      -e 's|@''REPLACE_UNLINK''@|0|g' \
+      -e 's|@''REPLACE_UNLINKAT''@|0|g' \
+      -e 's|@''REPLACE_USLEEP''@|0|g' \
+      -e 's|@''REPLACE_WRITE''@|0|g' \
+      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H''@|0|g' \
+      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h'; \
+} > lib/unistd.h-t && \
+mv lib/unistd.h-t lib/unistd.h
+rm -f lib/unitypes.h-t lib/unitypes.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  cat ./lib/unitypes.in.h; \
+} > lib/unitypes.h-t && \
+mv -f lib/unitypes.h-t lib/unitypes.h
+rm -f lib/uniwidth.h-t lib/uniwidth.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  cat ./lib/uniwidth.in.h; \
+} > lib/uniwidth.h-t && \
+mv -f lib/uniwidth.h-t lib/uniwidth.h
+rm -f lib/wchar.h-t lib/wchar.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''HAVE_FEATURES_H''@|1|g' \
+      -e 's|@''NEXT_WCHAR_H''@|<wchar.h>|g' \
+      -e 's|@''HAVE_WCHAR_H''@|1|g' \
+      -e 's/@''HAVE_CRTDEFS_H''@/0/g' \
+      -e 's/@''GNULIB_OVERRIDES_WINT_T''@/0/g' \
+      -e 's/@''GNULIB_BTOWC''@/0/g' \
+      -e 's/@''GNULIB_WCTOB''@/0/g' \
+      -e 's/@''GNULIB_MBSINIT''@/1/g' \
+      -e 's/@''GNULIB_MBRTOWC''@/1/g' \
+      -e 's/@''GNULIB_MBRLEN''@/0/g' \
+      -e 's/@''GNULIB_MBSRTOWCS''@/0/g' \
+      -e 's/@''GNULIB_MBSNRTOWCS''@/0/g' \
+      -e 's/@''GNULIB_WCRTOMB''@/0/g' \
+      -e 's/@''GNULIB_WCSRTOMBS''@/0/g' \
+      -e 's/@''GNULIB_WCSNRTOMBS''@/0/g' \
+      -e 's/@''GNULIB_WCWIDTH''@/1/g' \
+      -e 's/@''GNULIB_WMEMCHR''@/0/g' \
+      -e 's/@''GNULIB_WMEMCMP''@/0/g' \
+      -e 's/@''GNULIB_WMEMCPY''@/0/g' \
+      -e 's/@''GNULIB_WMEMMOVE''@/0/g' \
+      -e 's/@''GNULIB_WMEMSET''@/0/g' \
+      -e 's/@''GNULIB_WCSLEN''@/0/g' \
+      -e 's/@''GNULIB_WCSNLEN''@/0/g' \
+      -e 's/@''GNULIB_WCSCPY''@/0/g' \
+      -e 's/@''GNULIB_WCPCPY''@/0/g' \
+      -e 's/@''GNULIB_WCSNCPY''@/0/g' \
+      -e 's/@''GNULIB_WCPNCPY''@/0/g' \
+      -e 's/@''GNULIB_WCSCAT''@/0/g' \
+      -e 's/@''GNULIB_WCSNCAT''@/0/g' \
+      -e 's/@''GNULIB_WCSCMP''@/0/g' \
+      -e 's/@''GNULIB_WCSNCMP''@/0/g' \
+      -e 's/@''GNULIB_WCSCASECMP''@/0/g' \
+      -e 's/@''GNULIB_WCSNCASECMP''@/0/g' \
+      -e 's/@''GNULIB_WCSCOLL''@/0/g' \
+      -e 's/@''GNULIB_WCSXFRM''@/0/g' \
+      -e 's/@''GNULIB_WCSDUP''@/0/g' \
+      -e 's/@''GNULIB_WCSCHR''@/0/g' \
+      -e 's/@''GNULIB_WCSRCHR''@/0/g' \
+      -e 's/@''GNULIB_WCSCSPN''@/0/g' \
+      -e 's/@''GNULIB_WCSSPN''@/0/g' \
+      -e 's/@''GNULIB_WCSPBRK''@/0/g' \
+      -e 's/@''GNULIB_WCSSTR''@/0/g' \
+      -e 's/@''GNULIB_WCSTOK''@/0/g' \
+      -e 's/@''GNULIB_WCSWIDTH''@/0/g' \
+      -e 's/@''GNULIB_WCSFTIME''@/0/g' \
+      < ./lib/wchar.in.h | \
+  sed -e 's|@''HAVE_WINT_T''@|1|g' \
+      -e 's|@''HAVE_BTOWC''@|1|g' \
+      -e 's|@''HAVE_MBSINIT''@|1|g' \
+      -e 's|@''HAVE_MBRTOWC''@|1|g' \
+      -e 's|@''HAVE_MBRLEN''@|1|g' \
+      -e 's|@''HAVE_MBSRTOWCS''@|1|g' \
+      -e 's|@''HAVE_MBSNRTOWCS''@|1|g' \
+      -e 's|@''HAVE_WCRTOMB''@|1|g' \
+      -e 's|@''HAVE_WCSRTOMBS''@|1|g' \
+      -e 's|@''HAVE_WCSNRTOMBS''@|1|g' \
+      -e 's|@''HAVE_WMEMCHR''@|1|g' \
+      -e 's|@''HAVE_WMEMCMP''@|1|g' \
+      -e 's|@''HAVE_WMEMCPY''@|1|g' \
+      -e 's|@''HAVE_WMEMMOVE''@|1|g' \
+      -e 's|@''HAVE_WMEMSET''@|1|g' \
+      -e 's|@''HAVE_WCSLEN''@|1|g' \
+      -e 's|@''HAVE_WCSNLEN''@|1|g' \
+      -e 's|@''HAVE_WCSCPY''@|1|g' \
+      -e 's|@''HAVE_WCPCPY''@|1|g' \
+      -e 's|@''HAVE_WCSNCPY''@|1|g' \
+      -e 's|@''HAVE_WCPNCPY''@|1|g' \
+      -e 's|@''HAVE_WCSCAT''@|1|g' \
+      -e 's|@''HAVE_WCSNCAT''@|1|g' \
+      -e 's|@''HAVE_WCSCMP''@|1|g' \
+      -e 's|@''HAVE_WCSNCMP''@|1|g' \
+      -e 's|@''HAVE_WCSCASECMP''@|1|g' \
+      -e 's|@''HAVE_WCSNCASECMP''@|1|g' \
+      -e 's|@''HAVE_WCSCOLL''@|1|g' \
+      -e 's|@''HAVE_WCSXFRM''@|1|g' \
+      -e 's|@''HAVE_WCSDUP''@|1|g' \
+      -e 's|@''HAVE_WCSCHR''@|1|g' \
+      -e 's|@''HAVE_WCSRCHR''@|1|g' \
+      -e 's|@''HAVE_WCSCSPN''@|1|g' \
+      -e 's|@''HAVE_WCSSPN''@|1|g' \
+      -e 's|@''HAVE_WCSPBRK''@|1|g' \
+      -e 's|@''HAVE_WCSSTR''@|1|g' \
+      -e 's|@''HAVE_WCSTOK''@|1|g' \
+      -e 's|@''HAVE_WCSWIDTH''@|1|g' \
+      -e 's|@''HAVE_WCSFTIME''@|1|g' \
+      -e 's|@''HAVE_DECL_WCTOB''@|1|g' \
+      -e 's|@''HAVE_DECL_WCWIDTH''@|1|g' \
+  | \
+  sed -e 's|@''REPLACE_MBSTATE_T''@|0|g' \
+      -e 's|@''REPLACE_BTOWC''@|0|g' \
+      -e 's|@''REPLACE_WCTOB''@|0|g' \
+      -e 's|@''REPLACE_MBSINIT''@|0|g' \
+      -e 's|@''REPLACE_MBRTOWC''@|1|g' \
+      -e 's|@''REPLACE_MBRLEN''@|0|g' \
+      -e 's|@''REPLACE_MBSRTOWCS''@|0|g' \
+      -e 's|@''REPLACE_MBSNRTOWCS''@|0|g' \
+      -e 's|@''REPLACE_WCRTOMB''@|0|g' \
+      -e 's|@''REPLACE_WCSRTOMBS''@|0|g' \
+      -e 's|@''REPLACE_WCSNRTOMBS''@|0|g' \
+      -e 's|@''REPLACE_WCWIDTH''@|0|g' \
+      -e 's|@''REPLACE_WCSWIDTH''@|0|g' \
+      -e 's|@''REPLACE_WCSFTIME''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ./lib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h'; \
+} > lib/wchar.h-t && \
+mv lib/wchar.h-t lib/wchar.h
+rm -f lib/wctype.h-t lib/wctype.h && \
+{ echo '/* DO NOT EDIT! GENERATED AUTOMATICALLY! */'; \
+  sed -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's/@''HAVE_WCTYPE_H''@/1/g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_WCTYPE_H''@|<wctype.h>|g' \
+      -e 's/@''HAVE_CRTDEFS_H''@/0/g' \
+      -e 's/@''GNULIB_OVERRIDES_WINT_T''@/0/g' \
+      -e 's/@''GNULIB_ISWBLANK''@/0/g' \
+      -e 's/@''GNULIB_WCTYPE''@/0/g' \
+      -e 's/@''GNULIB_ISWCTYPE''@/0/g' \
+      -e 's/@''GNULIB_WCTRANS''@/0/g' \
+      -e 's/@''GNULIB_TOWCTRANS''@/0/g' \
+      -e 's/@''HAVE_ISWBLANK''@/1/g' \
+      -e 's/@''HAVE_ISWCNTRL''@/1/g' \
+      -e 's/@''HAVE_WCTYPE_T''@/1/g' \
+      -e 's/@''HAVE_WCTRANS_T''@/1/g' \
+      -e 's/@''HAVE_WINT_T''@/1/g' \
+      -e 's/@''REPLACE_ISWBLANK''@/0/g' \
+      -e 's/@''REPLACE_ISWCNTRL''@/0/g' \
+      -e 's/@''REPLACE_TOWLOWER''@/0/g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ./lib/c++defs.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ./lib/warn-on-use.h' \
+      < ./lib/wctype.in.h; \
+} > lib/wctype.h-t && \
+mv lib/wctype.h-t lib/wctype.h
+make  all-recursive
+make[3]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+Making all in po
+make[4]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2/po'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2/po'
+Making all in runtime-po
+make[4]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2/runtime-po'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2/runtime-po'
+Making all in .
+make[4]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+rm -f src/yacc src/yacc.tmp
+/bin/mkdir -p src
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-AnnotationList.o `test -f 'src/AnnotationList.c' || echo './'`src/AnnotationList.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-InadequacyList.o `test -f 'src/InadequacyList.c' || echo './'`src/InadequacyList.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-LR0.o `test -f 'src/LR0.c' || echo './'`src/LR0.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-Sbitset.o `test -f 'src/Sbitset.c' || echo './'`src/Sbitset.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-assoc.o `test -f 'src/assoc.c' || echo './'`src/assoc.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-closure.o `test -f 'src/closure.c' || echo './'`src/closure.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-complain.o `test -f 'src/complain.c' || echo './'`src/complain.c
+echo '#! /bin/sh' >src/yacc.tmp
+echo "exec '/usr/bin/bison' -y "'"$@"' >>src/yacc.tmp
+chmod a+x src/yacc.tmp
+mv src/yacc.tmp src/yacc
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-conflicts.o `test -f 'src/conflicts.c' || echo './'`src/conflicts.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-derives.o `test -f 'src/derives.c' || echo './'`src/derives.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-files.o `test -f 'src/files.c' || echo './'`src/files.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-getargs.o `test -f 'src/getargs.c' || echo './'`src/getargs.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-gram.o `test -f 'src/gram.c' || echo './'`src/gram.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-graphviz.o `test -f 'src/graphviz.c' || echo './'`src/graphviz.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-lalr.o `test -f 'src/lalr.c' || echo './'`src/lalr.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-ielr.o `test -f 'src/ielr.c' || echo './'`src/ielr.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-location.o `test -f 'src/location.c' || echo './'`src/location.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-main.o `test -f 'src/main.c' || echo './'`src/main.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-muscle-tab.o `test -f 'src/muscle-tab.c' || echo './'`src/muscle-tab.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-named-ref.o `test -f 'src/named-ref.c' || echo './'`src/named-ref.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-nullable.o `test -f 'src/nullable.c' || echo './'`src/nullable.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-output.o `test -f 'src/output.c' || echo './'`src/output.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-parse-gram.o `test -f 'src/parse-gram.c' || echo './'`src/parse-gram.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-print-xml.o `test -f 'src/print-xml.c' || echo './'`src/print-xml.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-print.o `test -f 'src/print.c' || echo './'`src/print.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-print_graph.o `test -f 'src/print_graph.c' || echo './'`src/print_graph.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-reader.o `test -f 'src/reader.c' || echo './'`src/reader.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-reduce.o `test -f 'src/reduce.c' || echo './'`src/reduce.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-relation.o `test -f 'src/relation.c' || echo './'`src/relation.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-scan-code-c.o `test -f 'src/scan-code-c.c' || echo './'`src/scan-code-c.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-scan-gram-c.o `test -f 'src/scan-gram-c.c' || echo './'`src/scan-gram-c.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-scan-skel-c.o `test -f 'src/scan-skel-c.c' || echo './'`src/scan-skel-c.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-state.o `test -f 'src/state.c' || echo './'`src/state.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-symlist.o `test -f 'src/symlist.c' || echo './'`src/symlist.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-symtab.o `test -f 'src/symtab.c' || echo './'`src/symtab.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-tables.o `test -f 'src/tables.c' || echo './'`src/tables.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o src/bison-uniqstr.o `test -f 'src/uniqstr.c' || echo './'`src/uniqstr.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/argmatch.o lib/argmatch.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/binary-io.o lib/binary-io.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/bitrotate.o lib/bitrotate.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/c-ctype.o lib/c-ctype.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/c-strcasecmp.o lib/c-strcasecmp.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/c-strncasecmp.o lib/c-strncasecmp.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/cloexec.o lib/cloexec.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/close-stream.o lib/close-stream.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/closeout.o lib/closeout.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/concat-filename.o lib/concat-filename.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/dirname.o lib/dirname.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/basename.o lib/basename.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/dirname-lgpl.o lib/dirname-lgpl.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/basename-lgpl.o lib/basename-lgpl.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/stripslash.o lib/stripslash.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/exitfail.o lib/exitfail.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/fatal-signal.o lib/fatal-signal.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/fd-hook.o lib/fd-hook.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/fd-safer-flag.o lib/fd-safer-flag.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/dup-safer-flag.o lib/dup-safer-flag.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/fopen-safer.o lib/fopen-safer.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/gethrxtime.o lib/gethrxtime.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/xtime.o lib/xtime.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/getprogname.o lib/getprogname.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/gettime.o lib/gettime.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/hard-locale.o lib/hard-locale.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/hash.o lib/hash.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/localcharset.o lib/localcharset.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/glthread/lock.o lib/glthread/lock.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/malloca.o lib/malloca.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/math.o lib/math.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/mbswidth.o lib/mbswidth.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/pipe2.o lib/pipe2.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/pipe2-safer.o lib/pipe2-safer.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/printf-frexp.o lib/printf-frexp.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/printf-frexpl.o lib/printf-frexpl.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/progname.o lib/progname.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/quotearg.o lib/quotearg.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/sig-handler.o lib/sig-handler.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/spawn-pipe.o lib/spawn-pipe.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/stat-time.o lib/stat-time.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/glthread/threadlib.o lib/glthread/threadlib.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/timespec.o lib/timespec.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/timevar.o lib/timevar.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/unistd.o lib/unistd.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/dup-safer.o lib/dup-safer.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/fd-safer.o lib/fd-safer.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/pipe-safer.o lib/pipe-safer.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/uniwidth/width.o lib/uniwidth/width.c
+lib/quotearg.c(321): warning #1292: unknown attribute "__fallthrough__"
+        FALLTHROUGH;
+        ^
+
+lib/quotearg.c(376): warning #1292: unknown attribute "__fallthrough__"
+        FALLTHROUGH;
+        ^
+
+lib/quotearg.c(379): warning #1292: unknown attribute "__fallthrough__"
+        FALLTHROUGH;
+        ^
+
+lib/quotearg.c(383): warning #1292: unknown attribute "__fallthrough__"
+        FALLTHROUGH;
+        ^
+
+lib/quotearg.c(528): warning #1292: unknown attribute "__fallthrough__"
+            FALLTHROUGH;
+            ^
+
+lib/quotearg.c(532): warning #1292: unknown attribute "__fallthrough__"
+            FALLTHROUGH;
+            ^
+
+lib/quotearg.c(535): warning #1292: unknown attribute "__fallthrough__"
+            FALLTHROUGH;
+            ^
+
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/wait-process.o lib/wait-process.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/wctype-h.o lib/wctype-h.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/xmalloc.o lib/xmalloc.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/xalloc-die.o lib/xalloc-die.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/xconcat-filename.o lib/xconcat-filename.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/xsize.o lib/xsize.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/xstrndup.o lib/xstrndup.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/abitset.o lib/abitset.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/bitset.o lib/bitset.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/bitset_stats.o lib/bitset_stats.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/bitsetv.o lib/bitsetv.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/ebitset.o lib/ebitset.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/lbitset.o lib/lbitset.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/vbitset.o lib/vbitset.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/bitsetv-print.o lib/bitsetv-print.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/get-errno.o lib/get-errno.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/path-join.o lib/path-join.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/asnprintf.o lib/asnprintf.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/fcntl.o lib/fcntl.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/fprintf.o lib/fprintf.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/fseterr.o lib/fseterr.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/localtime-buffer.o lib/localtime-buffer.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/mbrtowc.o lib/mbrtowc.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/perror.o lib/perror.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/printf.o lib/printf.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/printf-args.o lib/printf-args.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/printf-parse.o lib/printf-parse.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/snprintf.o lib/snprintf.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/sprintf.o lib/sprintf.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/strerror.o lib/strerror.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/strerror_r.o lib/strerror_r.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/vasnprintf.o lib/vasnprintf.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/vfprintf.o lib/vfprintf.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/vsnprintf.o lib/vsnprintf.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/vsprintf.o lib/vsprintf.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/xmemdup0.o lib/xmemdup0.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/main.o lib/main.c
+icc    -I. -I./lib -I. -I./lib -Wdate-time -D_FORTIFY_SOURCE=2  -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe -c -o lib/yyerror.o lib/yyerror.c
+lib/vasnprintf.c(4850): warning #1292: unknown attribute "__fallthrough__"
+                      FALLTHROUGH;
+                      ^
+
+rm -f lib/libbison.a
+xiar cr lib/libbison.a lib/argmatch.o lib/binary-io.o lib/bitrotate.o lib/c-ctype.o lib/c-strcasecmp.o lib/c-strncasecmp.o lib/cloexec.o lib/close-stream.o lib/closeout.o lib/concat-filename.o lib/dirname.o lib/basename.o lib/dirname-lgpl.o lib/basename-lgpl.o lib/stripslash.o lib/exitfail.o lib/fatal-signal.o lib/fd-hook.o lib/fd-safer-flag.o lib/dup-safer-flag.o lib/fopen-safer.o lib/gethrxtime.o lib/xtime.o lib/getprogname.o lib/gettime.o lib/hard-locale.o lib/hash.o lib/localcharset.o lib/glthread/lock.o lib/malloca.o lib/math.o lib/mbswidth.o lib/pipe2.o lib/pipe2-safer.o lib/printf-frexp.o lib/printf-frexpl.o lib/progname.o lib/quotearg.o lib/sig-handler.o lib/spawn-pipe.o lib/stat-time.o lib/glthread/threadlib.o lib/timespec.o lib/timevar.o lib/unistd.o lib/dup-safer.o lib/fd-safer.o lib/pipe-safer.o lib/uniwidth/width.o lib/wait-process.o lib/wctype-h.o lib/xmalloc.o lib/xalloc-die.o lib/xconcat-filename.o lib/xsize.o lib/xstrndup.o lib/abitset.o lib/bitset.o lib/bitset_stats.o lib/bitsetv.o lib/ebitset.o lib/lbitset.o lib/vbitset.o lib/bitsetv-print.o lib/get-errno.o lib/path-join.o lib/asnprintf.o lib/fcntl.o lib/fprintf.o lib/fseterr.o lib/localtime-buffer.o lib/mbrtowc.o lib/perror.o lib/printf.o lib/printf-args.o lib/printf-parse.o lib/snprintf.o lib/sprintf.o lib/strerror.o lib/strerror_r.o lib/vasnprintf.o lib/vfprintf.o lib/vsnprintf.o lib/vsprintf.o lib/xmemdup0.o
+rm -f lib/liby.a
+xiar cr lib/liby.a lib/main.o lib/yyerror.o 
+xiar: executing 'ar'
+ranlib lib/liby.a
+xiar: executing 'ar'
+ranlib lib/libbison.a
+icc   -g -O2 -fdebug-prefix-map=/home/richard/debs/NONGIT/bison/bison-3.2.2=. -fstack-protector-strong -Wformat -Werror=format-security -march=native -pipe  -Wl,-z,relro -Wl,--as-needed,--gc-sections,--print-gc-sections,--print-memory-usage,--stats -o src/bison src/bison-AnnotationList.o src/bison-InadequacyList.o src/bison-LR0.o src/bison-Sbitset.o src/bison-assoc.o src/bison-closure.o src/bison-complain.o src/bison-conflicts.o src/bison-derives.o src/bison-files.o src/bison-getargs.o src/bison-gram.o src/bison-graphviz.o src/bison-lalr.o src/bison-ielr.o src/bison-location.o src/bison-main.o src/bison-muscle-tab.o src/bison-named-ref.o src/bison-nullable.o src/bison-output.o src/bison-parse-gram.o src/bison-print-xml.o src/bison-print.o src/bison-print_graph.o src/bison-reader.o src/bison-reduce.o src/bison-relation.o src/bison-scan-code-c.o src/bison-scan-gram-c.o src/bison-scan-skel-c.o src/bison-state.o src/bison-symlist.o src/bison-symtab.o src/bison-tables.o src/bison-uniqstr.o          lib/libbison.a 
+ld: removing unused section '.rodata.cst4' in file '/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o'
+ld: removing unused section '.data' in file '/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o'
+ld: removing unused section '.text.c_strcasecmp' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.rpl_fcntl_DUPFD_CLOEXEC' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.bss.have_dupfd_cloexec.411.83.1140' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.xmalloc..0' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.__argmatch_die' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.xmalloc..1' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.muscle_m4_output_processor' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.xmalloc..2' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.xmalloc..3' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.xmalloc..4' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.raw_hasher' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.raw_comparator' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.rule_useful_in_grammar_p' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.rule_useless_in_parser_p' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.rule_useless_in_grammar_p' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.semantic_type_check_defined_processor' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.symbol_translation_processor' in file '/tmp/ipo_iccvrZHdh.o'
+ld: removing unused section '.text.symbol_pack_processor' in file '/tmp/ipo_iccvrZHdh.o'
+Memory region         Used Size  Region Size  %age Used
+ld: total time in link: 0.205521
+LC_ALL=C src/bison --version >doc/bison.help.tmp
+LC_ALL=C src/bison --help | \
+  sed '/translation bugs/d'  >>doc/bison.help.tmp
+./build-aux/move-if-change doc/bison.help.tmp doc/bison.help
+make[4]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+make[3]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+make[2]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+make[1]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+ fakeroot debian/rules binary
+dh binary --parallel
+   dh_testroot -O--parallel
+   dh_prep -O--parallel
+   dh_installdirs -O--parallel
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+dh_auto_install
+	make V=1 -j8 install DESTDIR=/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp AM_UPDATE_INFO_DIR=no
+make[2]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+make  install-recursive
+make[3]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+Making install in po
+make[4]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2/po'
+installing ca.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ca/LC_MESSAGES/bison.mo
+installing da.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/da/LC_MESSAGES/bison.mo
+installing de.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/de/LC_MESSAGES/bison.mo
+installing el.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/el/LC_MESSAGES/bison.mo
+installing eo.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/eo/LC_MESSAGES/bison.mo
+installing es.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/es/LC_MESSAGES/bison.mo
+installing et.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/et/LC_MESSAGES/bison.mo
+installing fi.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/fi/LC_MESSAGES/bison.mo
+installing fr.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/fr/LC_MESSAGES/bison.mo
+installing ga.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ga/LC_MESSAGES/bison.mo
+installing hr.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/hr/LC_MESSAGES/bison.mo
+installing id.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/id/LC_MESSAGES/bison.mo
+installing it.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/it/LC_MESSAGES/bison.mo
+installing ja.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ja/LC_MESSAGES/bison.mo
+installing ms.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ms/LC_MESSAGES/bison.mo
+installing nb.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/nb/LC_MESSAGES/bison.mo
+installing nl.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/nl/LC_MESSAGES/bison.mo
+installing pl.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/pl/LC_MESSAGES/bison.mo
+installing pt.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/pt/LC_MESSAGES/bison.mo
+installing pt_BR.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/pt_BR/LC_MESSAGES/bison.mo
+installing ro.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ro/LC_MESSAGES/bison.mo
+installing ru.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ru/LC_MESSAGES/bison.mo
+installing sr.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/sr/LC_MESSAGES/bison.mo
+installing sv.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/sv/LC_MESSAGES/bison.mo
+installing tr.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/tr/LC_MESSAGES/bison.mo
+installing uk.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/uk/LC_MESSAGES/bison.mo
+installing vi.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/vi/LC_MESSAGES/bison.mo
+installing zh_CN.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/zh_CN/LC_MESSAGES/bison.mo
+installing zh_TW.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/zh_TW/LC_MESSAGES/bison.mo
+if test "bison" = "gettext-tools"; then \
+  /bin/mkdir -p /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /usr/bin/install -c -m 644 ./$file \
+		    /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[4]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2/po'
+Making install in runtime-po
+make[4]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2/runtime-po'
+installing ast.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ast/LC_MESSAGES/bison-runtime.mo
+installing ca.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ca/LC_MESSAGES/bison-runtime.mo
+installing da.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/da/LC_MESSAGES/bison-runtime.mo
+installing de.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/de/LC_MESSAGES/bison-runtime.mo
+installing el.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/el/LC_MESSAGES/bison-runtime.mo
+installing eo.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/eo/LC_MESSAGES/bison-runtime.mo
+installing es.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/es/LC_MESSAGES/bison-runtime.mo
+installing et.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/et/LC_MESSAGES/bison-runtime.mo
+installing fi.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/fi/LC_MESSAGES/bison-runtime.mo
+installing fr.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/fr/LC_MESSAGES/bison-runtime.mo
+installing ga.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ga/LC_MESSAGES/bison-runtime.mo
+installing gl.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/gl/LC_MESSAGES/bison-runtime.mo
+installing hr.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/hr/LC_MESSAGES/bison-runtime.mo
+installing hu.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/hu/LC_MESSAGES/bison-runtime.mo
+installing ia.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ia/LC_MESSAGES/bison-runtime.mo
+installing id.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/id/LC_MESSAGES/bison-runtime.mo
+installing it.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/it/LC_MESSAGES/bison-runtime.mo
+installing ja.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ja/LC_MESSAGES/bison-runtime.mo
+installing ky.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ky/LC_MESSAGES/bison-runtime.mo
+installing lt.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/lt/LC_MESSAGES/bison-runtime.mo
+installing lv.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/lv/LC_MESSAGES/bison-runtime.mo
+installing ms.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ms/LC_MESSAGES/bison-runtime.mo
+installing nb.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/nb/LC_MESSAGES/bison-runtime.mo
+installing nl.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/nl/LC_MESSAGES/bison-runtime.mo
+installing pl.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/pl/LC_MESSAGES/bison-runtime.mo
+installing pt.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/pt/LC_MESSAGES/bison-runtime.mo
+installing pt_BR.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/pt_BR/LC_MESSAGES/bison-runtime.mo
+installing ro.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ro/LC_MESSAGES/bison-runtime.mo
+installing ru.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/ru/LC_MESSAGES/bison-runtime.mo
+installing sl.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/sl/LC_MESSAGES/bison-runtime.mo
+installing sq.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/sq/LC_MESSAGES/bison-runtime.mo
+installing sr.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/sr/LC_MESSAGES/bison-runtime.mo
+installing sv.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/sv/LC_MESSAGES/bison-runtime.mo
+installing th.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/th/LC_MESSAGES/bison-runtime.mo
+installing tr.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/tr/LC_MESSAGES/bison-runtime.mo
+installing uk.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/uk/LC_MESSAGES/bison-runtime.mo
+installing vi.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/vi/LC_MESSAGES/bison-runtime.mo
+installing zh_CN.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/zh_CN/LC_MESSAGES/bison-runtime.mo
+installing zh_TW.gmo as /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/locale/zh_TW/LC_MESSAGES/bison-runtime.mo
+if test "bison" = "gettext-tools"; then \
+  /bin/mkdir -p /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/gettext/po; \
+  for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do \
+    /usr/bin/install -c -m 644 ./$file \
+		    /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/gettext/po/$file; \
+  done; \
+  for file in Makevars; do \
+    rm -f /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/gettext/po/$file; \
+  done; \
+else \
+  : ; \
+fi
+make[4]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2/runtime-po'
+Making install in .
+make[4]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+LC_ALL=C src/bison --version >doc/bison.help.tmp
+LC_ALL=C src/bison --help | \
+  sed '/translation bugs/d'  >>doc/bison.help.tmp
+./build-aux/move-if-change doc/bison.help.tmp doc/bison.help
+make[5]: Entering directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/bin'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/bin'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/lib/x86_64-linux-gnu'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/aclocal'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples/calc++'
+  /usr/bin/install -c src/bison '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/bin'
+ /usr/bin/install -c -m 644  lib/liby.a '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/lib/x86_64-linux-gnu'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples/c++'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples/calc++'
+ /usr/bin/install -c src/yacc '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/bin'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples/c++'
+ /usr/bin/install -c -m 644 m4/bison-i18n.m4 '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/aclocal'
+ /usr/bin/install -c -m 644 examples/calc++/driver.cc examples/calc++/driver.hh examples/calc++/scanner.ll examples/calc++/calc++.cc examples/calc++/parser.yy '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples/calc++'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison'
+ /usr/bin/install -c -m 644 examples/c++/simple.yy '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples/c++'
+ /usr/bin/install -c -m 644 examples/c++/README examples/c++/Makefile examples/c++/variant.yy examples/c++/variant-11.yy '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples/c++'
+ /usr/bin/install -c -m 644 examples/calc++/README examples/calc++/Makefile '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples/calc++'
+ ( cd '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/lib/x86_64-linux-gnu' && ranlib liby.a )
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/bison/m4sugar'
+ /usr/bin/install -c -m 644 AUTHORS COPYING NEWS README THANKS TODO '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison'
+LC_ALL=C src/bison --version >doc/bison.help.tmp
+ /usr/bin/install -c -m 644 examples/README '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/bison'
+ /usr/bin/install -c -m 644 data/m4sugar/foreach.m4 data/m4sugar/m4sugar.m4 '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/bison/m4sugar'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/bison/xslt'
+LC_ALL=C src/bison --help | \
+  sed '/translation bugs/d'  >>doc/bison.help.tmp
+ /usr/bin/install -c -m 644 data/xslt/bison.xsl data/xslt/xml2dot.xsl data/xslt/xml2text.xsl data/xslt/xml2xhtml.xsl '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/bison/xslt'
+ /usr/bin/install -c -m 644 data/README data/bison.m4 data/c++-skel.m4 data/c++.m4 data/c-like.m4 data/c-skel.m4 data/c.m4 data/glr.c data/glr.cc data/java-skel.m4 data/java.m4 data/lalr1.cc data/lalr1.java data/location.cc data/stack.hh data/variant.hh data/yacc.c '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/bison'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples/rpcalc'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples/mfcalc'
+./build-aux/move-if-change doc/bison.help.tmp doc/bison.help
+ /usr/bin/install -c -m 644 examples/rpcalc/rpcalc.y '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples/rpcalc'
+ /usr/bin/install -c -m 644 examples/mfcalc/calc.h examples/mfcalc/mfcalc.y '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/doc/bison/examples/mfcalc'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/man/man1'
+ /bin/mkdir -p '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/info'
+ /usr/bin/install -c -m 644 ./doc/bison.1 doc/yacc.1 '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/man/man1'
+ /usr/bin/install -c -m 644 ./doc/bison.info '/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/info'
+make[5]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+make[4]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+make[3]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+make[2]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+rm -f -R /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/info/
+mv /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/bin/yacc /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/bin/bison.yacc
+mv /home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/man/man1/yacc.1 \
+	/home/richard/debs/NONGIT/bison/bison-3.2.2/debian/tmp/usr/share/man/man1/bison.yacc.1
+make[1]: Leaving directory '/home/richard/debs/NONGIT/bison/bison-3.2.2'
+   dh_install -O--parallel
+   dh_installdocs -O--parallel
+   dh_installchangelogs -O--parallel
+   dh_installexamples -O--parallel
+   dh_installman -O--parallel
+   dh_installcatalogs -O--parallel
+   dh_installcron -O--parallel
+   dh_installdebconf -O--parallel
+   dh_installemacsen -O--parallel
+   dh_installifupdown -O--parallel
+   dh_installinfo -O--parallel
+   dh_installinit -O--parallel
+   dh_installmenu -O--parallel
+   dh_installmime -O--parallel
+   dh_installmodules -O--parallel
+   dh_installlogcheck -O--parallel
+   dh_installlogrotate -O--parallel
+   dh_installpam -O--parallel
+   dh_installppp -O--parallel
+   dh_installudev -O--parallel
+   dh_installgsettings -O--parallel
+   dh_bugfiles -O--parallel
+   dh_ucf -O--parallel
+   dh_lintian -O--parallel
+   dh_gconf -O--parallel
+dh_gconf: Please migrate to dh_installgsettings; gconf + dh_gconf is scheduled for removal.
+   dh_icons -O--parallel
+   dh_perl -O--parallel
+   dh_usrlocal -O--parallel
+   dh_link -O--parallel
+   dh_installwm -O--parallel
+   dh_installxfonts -O--parallel
+   dh_strip_nondeterminism -O--parallel
+	Normalized debian/bison/usr/share/locale/uk/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/uk/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/da/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/da/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/nl/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/nl/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/ia/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/ms/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/ms/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/ky/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/hr/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/hr/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/sl/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/ru/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/ru/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/zh_TW/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/zh_TW/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/ast/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/ro/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/ro/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/fi/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/fi/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/th/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/de/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/de/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/es/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/es/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/fr/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/fr/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/ja/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/ja/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/pl/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/pl/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/sr/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/sr/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/pt/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/pt/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/lv/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/pt_BR/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/pt_BR/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/gl/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/et/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/et/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/sq/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/hu/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/tr/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/tr/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/sv/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/sv/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/el/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/el/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/id/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/id/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/it/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/it/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/ca/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/ca/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/zh_CN/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/zh_CN/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/nb/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/nb/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/vi/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/vi/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/ga/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/ga/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/eo/LC_MESSAGES/bison-runtime.mo
+	Normalized debian/bison/usr/share/locale/eo/LC_MESSAGES/bison.mo
+	Normalized debian/bison/usr/share/locale/lt/LC_MESSAGES/bison-runtime.mo
+   dh_compress -O--parallel
+ERROR: ld.so: object 'libfakeroot-sysv.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+ERROR: ld.so: object 'libfakeroot-sysv.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+   dh_fixperms -O--parallel
+   dh_missing -O--parallel
+   dh_strip -O--parallel
+   dh_makeshlibs -O--parallel
+ERROR: ld.so: object 'libfakeroot-sysv.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+ERROR: ld.so: object 'libfakeroot-sysv.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+   dh_shlibdeps -O--parallel
+ERROR: ld.so: object 'libfakeroot-sysv.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+ERROR: ld.so: object 'libfakeroot-sysv.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: can't extract name and version from library name 'libiomp5.so'
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bison/usr/bin/bison was not linked against libdl.so.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/bison/usr/bin/bison was not linked against libgcc_s.so.1 (it uses none of the library's symbols)
+   dh_installdeb -O--parallel
+   dh_gencontrol -O--parallel
+   dh_md5sums -O--parallel
+ERROR: ld.so: object 'libfakeroot-sysv.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+ERROR: ld.so: object 'libfakeroot-sysv.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+ERROR: ld.so: object 'libfakeroot-sysv.so' from LD_PRELOAD cannot be preloaded (cannot open shared object file): ignored.
+   dh_builddeb -O--parallel
+dpkg-deb: building package 'bison' in '../bison_3.2.2-1_amd64.deb'.
+dpkg-deb: building package 'bison-dbgsym' in '../bison-dbgsym_3.2.2-1_amd64.deb'.
+dpkg-deb: building package 'libbison-dev' in '../libbison-dev_3.2.2-1_amd64.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../bison_3.2.2-1_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+Now running lintian bison_3.2.2-1_amd64.changes ...
+W: bison: hardening-no-pie usr/bin/bison
+Finished running lintian.

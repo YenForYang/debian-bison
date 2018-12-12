@@ -1,0 +1,12 @@
+Package: bison-dbgsym
+Source: bison
+Version: 2:3.2.2-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Chuan-kai Lin <cklin@debian.org>
+Installed-Size: 328
+Depends: bison (= 2:3.2.2-1)
+Section: debug
+Priority: optional
+Description: debug symbols for bison
+Build-Ids: 176af70e53a8843c45765d67f2b102a641e2dade
